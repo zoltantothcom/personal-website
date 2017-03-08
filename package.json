@@ -1,0 +1,22 @@
+{
+  "name": "zoltantothcom",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoltantothcom/zoltantothcom.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Zoltan Toth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoltantothcom/zoltantothcom/issues"
+  },
+  "homepage": "https://github.com/zoltantothcom/zoltantothcom#readme"
+}
