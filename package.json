@@ -4,9 +4,11 @@
   "description": "Personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "gulp",
+    "test": "karma start karma.conf.js"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "coveralls": "^2.11.16",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.0.3",
@@ -17,6 +19,7 @@
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11",
     "jasmine-core": "^2.2.0",
     "jasmine-jquery": "^2.1.1",
     "jquery": "^3.1.1",
