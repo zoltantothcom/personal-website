@@ -28,7 +28,7 @@ gulp.task('serve', [ 'script', 'markup', 'styles', 'lint' ], function() {
 	gulp.watch('src/javascript/*.js', ['script']);
 });
 
-gulp.task('script', function() {
+gulp.task('script', ['lint'], function() {
 	gulp.src(['./src/javascript/script.js'])
 		.pipe(uglify())
 		.pipe(header(banner, { 
