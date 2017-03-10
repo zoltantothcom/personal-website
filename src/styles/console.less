@@ -1,0 +1,83 @@
+.console {
+  margin: 4em auto;
+  width: 600px;
+  background: #111;
+  height: 400px;
+  border: 3px ridge #fff;
+  font: normal 16px monospace;
+}
+
+header {
+  padding: 4px;
+  text-indent: 6px;
+  background: steelblue;
+  color: #fafafa;
+  height: 25px;
+  line-height: 24px;
+
+  ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 0;
+    float: right;
+    
+    li {
+      display: inline-block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      
+      button {
+        background: #bebebe;
+        color: #111;
+        border: 0;
+        cursor: pointer;
+        height: 24px;
+        width: 26px;
+        margin-left: -4px;
+        text-align: center;
+        transition: all .1s linear;
+        font: bold 20px monospace;
+        line-height: 12px;
+        
+        &:hover {
+          box-shadow: 0 0 2px 2px #fff;
+        }
+      }
+      
+      &:last-child button {
+        background: rgba(255, 0, 0, .875);
+        //border: 1px solid #ccc;
+        color: #fff;
+        text-shadow: 0 0 4px #272822;
+        width: 64px;
+        
+        &:hover {
+          background: red;
+        }
+      }
+    }
+  } 
+}
+
+p {
+  color: #fff;
+  margin: 8px 4px 0;
+}
+
+input {
+  background: #111;
+  border: 0;
+  color: #fff;
+  margin: 4px 4px 0;
+  font: normal 16px monospace;
+  outline: none;
+}
+
+.area {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 91.75%;
+  width: 100%;
+}
