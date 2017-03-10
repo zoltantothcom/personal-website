@@ -8,22 +8,18 @@
   <body>
     <section>
       <div class="console">
-        <header>Zoltan Toth
-          <ul>
-            <li>
-              <button>_</button>
-            </li>
-            <li>
-              <button>_</button>
-            </li>
-            <li>
-              <button>X</button>
-            </li>
+        <header class="console__header">Zoltan Toth
+          <ul class="console__buttons">
+            <li><i class="icon icon--window-minimize"></i></li>
+            <li><i class="icon icon--window-maximize"></i></li>
+            <li><i class="icon icon--cancel-1"></i></li>
           </ul>
         </header>
-        <div class="area">
-          <p>> type --help and press Enter for available commands</p>
-          <input>
+        <div class="console__window">
+          <div class="console__message-area">
+            <p>> type <span class="u-green">--help</span> and press Enter for available commands</p>
+            <input>
+          </div>
         </div>
       </div>
     </section>

@@ -51,7 +51,7 @@ gulp.task('markup', function() {
 });
 
 gulp.task('styles', function() {
-	gulp.src('./src/styles/*.less')
+	gulp.src('./src/styles/styles.less')
 		.pipe(less())
 		.pipe(clean({ 
 			compatibility: 'ie9' 
