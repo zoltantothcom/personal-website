@@ -5,16 +5,9 @@ var pkg      = require('./package.json'),
     clean    = require('gulp-clean-css'),
     uglify   = require('gulp-uglify'),
     rename   = require('gulp-rename'),
-    header   = require('gulp-header'),
     jshint   = require('gulp-jshint'),
     stylish  = require('jshint-stylish'),
     browSync = require('browser-sync').create();
-
-var banner = ['/**',
-	' * Zoltan Toth personal portfolio v<%= pkg.version %>',
-	' * <%= pkg.homepage %>',
-	' */',
-	''].join('\n');
 
 // static Server + watching less/html files
 gulp.task('serve', [ 'script', 'markup', 'styles', 'lint' ], function() {
@@ -31,9 +24,6 @@ gulp.task('serve', [ 'script', 'markup', 'styles', 'lint' ], function() {
 gulp.task('script', ['lint'], function() {
 	gulp.src(['./src/javascript/script.js'])
 		.pipe(uglify())
-		.pipe(header(banner, { 
-			pkg: pkg 
-		}))
 		.pipe(rename({ 
 			suffix: '.min' 
 		}))
