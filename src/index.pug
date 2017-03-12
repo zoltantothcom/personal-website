@@ -11,13 +11,16 @@ html(lang="en")
 			div.console
 				header.console__header Zoltan Toth
 					ul.console__buttons
-						li: i.icon.icon--window-minimize
-						li: i.icon.icon--window-maximize
-						li: i.icon.icon--cancel-1
+						li: a.console__button(href="#" title="Minimize window")
+							i.icon.icon--window-minimize
+						li: a.console__button(href="#" title="Restore window") 
+							i.icon.icon--window-maximize
+						li: a.console__button.console__button--close(href="#" title="Close") 
+							i.icon.icon--cancel-1
 
 				div.console__window
 					div.console__message-area
 						p > type #[span.u-green --help] and press Enter for available commands
-						input
+					input.console__input
 
 		script(src="script.min.js")

@@ -2,7 +2,6 @@
     background: #000;
     border: 3px double #ddd;
     font: normal 16px monospace;
-    height: 400px;
     margin: 4em auto;
     overflow: hidden;
     width: 600px;
@@ -14,6 +13,7 @@
     color: #fff;
     height: 25px;
     line-height: 25px;
+    overflow: hidden;
     padding: 4px;
     text-indent: 6px;
 }
@@ -34,17 +34,15 @@
 }
 
 .console__button {
-    background: #b0c4de;
+    //background: #b0c4de;
     border: 1px solid #ddd;
-    color: #111;
-    cursor: pointer;
+    display: inline-block;
     height: 24px;
-    width: 26px;
-    margin-left: -4px;
+    margin-left: 0px;
     text-align: center;
-    transition: all .2s linear;
-    font: bold 20px monospace;
-    line-height: 12px;
+    text-decoration: none;
+    transition: all .1s linear;
+    width: 26px;
 
     &:hover {
         box-shadow: inset 0 0 2px 1px #eee;
@@ -52,9 +50,7 @@
 }
 
 .console__button--close {
-    background: lightcoral; //rgba(255, 0, 0, .875);
-    color: #fff;
-    text-shadow: 0 0 4px #272822;
+    background: rgba(255, 0, 0, .75);
     width: 64px;
 
     &:hover {
@@ -62,26 +58,26 @@
     }
 }
 
-
 p {
-    color: #ccc;
+    color: #bfbfbf;
     margin: 0;
 }
 
-input {
-    background: #111;
+.console__input {
+    background: #000;
     border: 0;
-    color: #fff;
-    margin: 4px 4px 0;
+    color: #bfbfbf;
     font: normal 16px monospace;
+    margin: 4px 0 0;
     outline: none;
+    width: 100%;
 }
 
 .console__window {
-    overflow-y: scroll;
+    height: 370px;
     overflow-x: hidden;
+    overflow-y: scroll;
     padding: 8px;
-    height: 87.5%;
 }
 
 .console__message-area {
