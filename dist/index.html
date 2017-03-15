@@ -10,16 +10,19 @@
       <div class="console">
         <header class="console__header">Zoltan Toth
           <ul class="console__buttons">
-            <li><a class="console__button" href="#" title="Minimize window"><i class="icon icon--window-minimize"></i></a></li>
-            <li><a class="console__button" href="#" title="Restore window"> <i class="icon icon--window-maximize"></i></a></li>
-            <li><a class="console__button console__button--close" href="#" title="Close"> <i class="icon icon--cancel-1"></i></a></li>
+            <li><a class="console__button console__button--min" href="#" title="Minimize window"><i class="icon icon--window-minimize"></i></a></li>
+            <li><a class="console__button console__button--max" href="#" title="Restore window"> <i class="icon icon--window-maximize"></i></a></li>
+            <li><a class="console__button console__button--cls" href="#" title="Close"> <i class="icon icon--cancel-1"></i></a></li>
           </ul>
         </header>
         <div class="console__window">
           <div class="console__message-area">
             <p>> type <span class="u-green">--help</span> and press Enter for available commands</p>
           </div>
-          <input class="console__input">
+          <div class="console__input-container">
+            <label for="console__input">></label>
+            <input class="console__input" id="console__input">
+          </div>
         </div>
       </div>
     </section>
