@@ -1,10 +1,20 @@
 window.addEventListener('load', function() {
 	document.querySelector('.console').classList.add('visible');
+	document.getElementById('console__input').focus();
 });
 
 var messages = {
-	help: 'List of available commands:',
-	default: 'is not recognized as an internal or external command.'
+	help: 'List of available commands:<br><span class="console__warning">--about</span> .....shows a really short bio',
+	default: 'is not recognized as an internal or external command.',
+	commands: {
+		about:   'A really short bio',
+		social:  'Links to social accounts(LinkedIn, StackOverflow, GitHub)',
+		contact: 'Email and phone to contact me',
+
+		help:  'List the available commands',
+		clean: 'Clean the console window',
+		close: 'Close the console'
+	}
 };
 
 var Console = function() {
@@ -23,7 +33,7 @@ var Console = function() {
 			switch (command) {
 				case '--help':
 				case   'help':
-					console.log(messages.help);
+					self.output(command);
 					break;
 
 				case '--clean':
@@ -47,7 +57,7 @@ var Console = function() {
 					break;
 
 				default:
-					console.log('\'' + command + '\' ' + messages.default);
+					console.log('<span class="console__error">\'' + command + '\' ' + messages.default + '</span>');
 					console.log(messages.help);
 			}
 
@@ -61,6 +71,14 @@ Console.prototype.addListener = function(elem, event, action) {
 	document.querySelector(elem).addEventListener(event, function() {
 		action();
 	});
+};
+
+Console.prototype.output = function(command) {
+	var div = document.createElement('p');
+	div.innerHTML = '> ' + command + '<br>';
+	div.innerHTML += messages.help;
+
+	document.querySelector('.console__message-area').appendChild(div);
 };
 
 Console.prototype.clean = function() {
