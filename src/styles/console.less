@@ -1,5 +1,5 @@
 .console {
-    background: #000;
+    background: rgba(0, 0, 0, .75);
     border: 3px double #ddd;
     font: normal 16px monospace;
     margin: 5em auto;
@@ -12,10 +12,15 @@
         margin-top: 4em;
         opacity: 1;
     }
+
+    p {
+        color: #f5f5f5;
+        margin: 0;
+    }
 }
 
 .console__header {
-    background: #4682b4;
+    background: #83abd4;
     border-bottom: 1px solid #ddd;
     color: #fff;
     height: 25px;
@@ -64,18 +69,13 @@
     }
 }
 
-p {
-    color: #bfbfbf;
-    margin: 0;
-}
-
 .console__input-container {
     color: @console-grey;
     padding-left: 8px; 
 }
 
 .console__input {
-    background: #000;
+    background: transparent;
     border: 0;
     cursor: default;
     display: inline-block;
