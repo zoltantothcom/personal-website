@@ -4,17 +4,35 @@ window.addEventListener('load', function() {
 });
 
 var messages = {
-	help: 'List of available commands:<br><span class="console__warning">--about</span> .....shows a really short bio',
-	default: 'is not recognized as an internal or external command.',
-	commands: {
-		about:   'A really short bio',
-		social:  'Links to social accounts(LinkedIn, StackOverflow, GitHub)',
-		contact: 'Email and phone to contact me',
+	error: [
+		' is not recognized as a valid command.'
+	],
 
-		help:  'List the available commands',
-		clean: 'Clean the console window',
-		close: 'Close the console'
-	}
+	help: [
+		'<span class="console__warning">-a, about</span> ... A really short bio',
+		'<span class="console__warning">-s, social</span> .. Links to LinkedIn, StackOverflow, GitHub',
+		'<span class="console__warning">-c, contact</span> . Email and phone for quick contact',
+		'<span class="console__warning">-h, help</span> .... Available commands',
+		'',
+		'<span class="console__warning">-x, exit</span> .... Close this window',
+		'<span class="console__warning">-m, hide</span> .... Minimize this window',
+		'<span class="console__warning">-r, clean</span> ... Clean this window',
+	],
+
+	social: [
+		'<a href="" class="console__info">LinkedIn</a>',
+		'<a href="" class="console__info">StackOverflow</a>',
+		'<a href="" class="console__info">GitHub</a>'
+	],
+
+	about: [
+		'Front End Developer. Toronto.'
+	],
+
+	contact: [
+		'contact@zoltantoth.com',
+		'416-402-3404'
+	]
 };
 
 var Console = function() {
@@ -31,34 +49,28 @@ var Console = function() {
 			command = input.value;
 
 			switch (command) {
-				case '--help':
-				case   'help':
-					self.output(command);
-					break;
-
-				case '--clean':
-				case   'clean':
+				case '-r':
+				case 'clean':
 					self.clean();
 					break;
 
-				case '--hide':
-				case   'hide':
+				case '-m':
+				case 'hide':
 					self.hide();
 					break;
 
-				case '--show':
-				case   'show':
+				case '-d':
+				case 'show':
 					self.show();
 					break;
 
-				case '--close':
-				case   'close':
+				case '-x':
+				case 'exit':
 					self.close();
 					break;
 
 				default:
-					console.log('<span class="console__error">\'' + command + '\' ' + messages.default + '</span>');
-					console.log(messages.help);
+					self.output(command);
 			}
 
 			input.value = '';
@@ -74,11 +86,42 @@ Console.prototype.addListener = function(elem, event, action) {
 };
 
 Console.prototype.output = function(command) {
-	var div = document.createElement('p');
+	var div = document.createElement('p'),
+		txt;
+
 	div.innerHTML = '> ' + command + '<br>';
-	div.innerHTML += messages.help;
+
+	switch (command) {
+		case '-a':
+			command = 'about';
+			break;
+		case '-s':
+			command = 'social';
+			break;
+		case '-c':
+			command = 'contact';
+			break;
+		case '-h':
+			command = 'help';
+			break;
+		default:
+
+	}
+
+	if (messages[command]) {
+		var size = messages[command].length;
+
+		for (var i = 0; i < size; i++) {
+			div.innerHTML += messages[command][i] + '<br>';
+		}
+	} else {
+		div.innerHTML += '<span class="console__error">ERROR! '+ "'"  + command + "'" + messages.error + '</span>';
+	}
 
 	document.querySelector('.console__message-area').appendChild(div);
+
+	var container = document.querySelector(".console__window");
+	container.scrollTop = container.scrollHeight;
 };
 
 Console.prototype.clean = function() {
