@@ -5,21 +5,43 @@ window.addEventListener('load', function() {
 
 var messages = {
 	default: [
-		'type <span class="console__success">-h</span> or <span class="console__success">help</span> and press Enter for available commands'
+		'type <span class="console__success">-h</span> \
+			or <span class="console__success">help</span> \
+			and press Enter for available commands'
 	],
 	error: [
 		' is not recognized as a valid command.'
 	],
 
 	help: [
-		'<span class="console__success">-a</span> or <span class="console__success">about</span> ... A really short bio',
-		'<span class="console__success">-s, social</span> .. Links to LinkedIn, StackOverflow, GitHub',
-		'<span class="console__success">-c, contact</span> . Email and phone for quick contact',
-		'<span class="console__success">-h, help</span> .... Available commands',
+		'<span class="console__success">-a</span> or \
+			<span class="console__success">about</span> \
+			... A really short bio',
+
+		'<span class="console__success">-s</span> or \
+			<span class="console__success">social</span> \
+			.. Links to LinkedIn, StackOverflow, GitHub',
+
+		'<span class="console__success">-c</span> or \
+			<span class="console__success">contact</span> \
+			. Email and phone for quick contact',
+
+		'<span class="console__success">-h</span> or \
+			<span class="console__success">help</span> \
+			.... Available commands',
+
 		'',
-		'<span class="console__success">-x, exit</span> .... Close this window',
-		'<span class="console__success">-m, hide</span> .... Minimize this window',
-		'<span class="console__success">-d, clean</span> ... Clean this window',
+		'<span class="console__success">-x</span> or \
+			<span class="console__success">exit</span> \
+			.... Close this window',
+
+		'<span class="console__success">-m</span> or \
+			<span class="console__success">hide</span> \
+			.... Minimize this window',
+
+		'<span class="console__success">-d</span> or \
+			<span class="console__success">clean</span> \
+			... Clean this window',
 	],
 
 	social: [
@@ -41,6 +63,7 @@ var messages = {
 var Console = function() {
 	var input   = document.querySelector('.console input'),
 		command = '',
+		historyIndex = 0,
 		self = this;
 
 	self.history = [];
@@ -49,14 +72,28 @@ var Console = function() {
 	self.addListener('.console__button--min', 'click', self.hide);
 	self.addListener('.console__button--max', 'click', self.show);
 
-	// show default message to help start using the console
+	// show default message to help users start with the console
 	self.output('default');
 
 	input.addEventListener('keyup', function(e) {
-		// 38 - arrow up
-		// 40 - arrow down
-		if (e.keyCode === 38) {
-			input.value = self.history[0] || '';
+
+		if (e.keyCode === 38 || e.keyCode === 40) {
+			// 38 - arrow up
+			// going up the history - from latest to first
+			if (e.keyCode === 38 &&
+					historyIndex < self.history.length - 1 && 
+					input.value !== '') {
+
+				historyIndex++;
+			}
+			// 40 - arrow down
+			// going down the history
+			if (e.keyCode === 40 && historyIndex > 0) {
+				historyIndex--;
+			}
+			
+			input.value = self.history[historyIndex] || '';
+
 		} else if (e.keyCode === 13) {
 			command = input.value;
 
@@ -132,14 +169,14 @@ Console.prototype.output = function(command) {
 			div.innerHTML += messages[command][i] + '<br>';
 		}
 	} else {
-		div.innerHTML += '<span class="console__error">ERROR! '+ '\''  + command + '\'' + messages.error + '</span>';
+		div.innerHTML += '<span class="console__error">ERROR! ' + 
+							'\'' + command + '\'' + messages.error + '</span>';
 	}
 
 	document.querySelector('.console__message-area').appendChild(div);
 
-	var container = document.querySelector('.console__window');
-
 	// always scroll to bottom
+	var container = document.querySelector('.console__window');
 	container.scrollTop = container.scrollHeight;
 };
 
