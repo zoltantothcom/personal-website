@@ -1,6 +1,7 @@
 .console {
     background: rgba(0, 0, 0, .75);
     border: 3px double #ddd;
+    display: none;
     font: normal 16px monospace;
     margin: 5em auto;
     opacity: 0;
@@ -104,3 +105,10 @@
 .console__success { color: @console-green; }
 .console__error   { color: @console-red; }
 .console__info    { color: @console-blue; }
+
+
+@media screen and (min-width: 800px) {
+    .console {
+        display: block;
+    }
+}

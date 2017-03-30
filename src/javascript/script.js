@@ -198,3 +198,11 @@ Console.prototype.close = function() {
 };
 
 var cmd = new Console();
+
+
+
+// portfolio
+document.querySelector('.portfolio').addEventListener('click', function(e) {
+	if (e.target.nodeName !== 'BUTTON') return;
+	e.target.parentNode.parentNode.classList.toggle('flip');
+});
