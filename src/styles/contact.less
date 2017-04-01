@@ -1,0 +1,47 @@
+.contact {
+	margin: 6em auto;
+	max-width: 840px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+label {
+	display: none;
+}
+
+input,
+textarea {
+	display: flex;
+	height: 2em;
+	margin: 1em auto 2em;
+	padding: .5em;
+	width: 90%;
+}
+
+textarea {
+	height: 8em;
+	resize: vertical;
+}
+
+button {
+	border: 1px solid red;
+	display: block;
+	height: 48px;
+	line-height: 48px;
+	margin: auto;
+	width: 33%;
+}
+
+
+@media screen and (min-width: 600px) {
+	input {
+		width: 43%;
+	}
+
+	textarea {
+		width: 93.25%;
+	}
+}
