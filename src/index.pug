@@ -25,6 +25,22 @@ html(lang="en")
 							label(for="console__input") >
 							input#console__input.console__input
 
+		section.social
+			h1 ...
+
+			-
+				var accounts = [
+					{ name: 'LinkedIn', link: "http://linkedin.com" },
+					{ name: 'Stack Overflow', link: "http://stackoverflow.com" },
+					{ name: 'GitHub', link: "http://github.com" }
+				]
+			
+			ul
+				each account in accounts
+					li.social__account 
+						a(href=account.link) 
+							= account.name
+
 		section.portfolio
 			h1 ...
 
@@ -69,5 +85,24 @@ html(lang="en")
 								each tool in item.tools
 									span= tool
 								button.portfolio__btn-close CLOSE
+
+		section.contact
+			h1 Contact
+
+			form
+				label(for="name") Name
+				input#name(placeholder="Name")
+
+				label(for="mail") Email
+				input#mail(placeholder="Email")
+
+				label(for="mess") Message
+				textarea#mess(placeholder="Message")
+
+				button Submit
+
+		footer
+			| author &copy; 2017
+
 
 		script(src="script.min.js")
