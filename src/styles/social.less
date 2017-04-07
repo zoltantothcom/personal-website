@@ -1,11 +1,11 @@
 .social {
 	margin: auto;
-	max-width: 840px;
+	max-width: 960px;
 
 	ul {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: center;
 		list-style: none;
 		padding: 0;
 	}
@@ -14,13 +14,14 @@
 .social__account {
 	background: #fff;
 	display: flex;
+	margin: 1px;
 	padding: 1.5em 0;
-	width: 30%;
+	width: 32%;
 }
 
 
-@media screen and (min-width: 600px) {
-	.social ul {
-
+@media screen and (min-width: 800px) {
+	.social__account {
+		width: 33%;
 	}
 }

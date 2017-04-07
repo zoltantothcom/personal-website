@@ -50,7 +50,7 @@ html(lang="en")
 						class: 'ifds',
 						client: "International Financial Data Services",
 						title: "Senior Front End Web Developer",
-						tools: ['AngularJS', 'JavaScript', 'LESS', 'MySQL', 'Webpack', 'Gulp']
+						tools: ['AngularJS', 'JavaScript', 'LESS']
 					},
 					{
 						class: 'olg',
@@ -73,18 +73,15 @@ html(lang="en")
 				]
 
 			each item in companies
-				article
-					div.portfolio__logo(class= item.class, title= item.client)
-					div.portfolio__item
-						div.portfolio__card
-							figure.portfolio__card--front 
-								= item.title
-								button.portfolio__btn-more MORE INFO
-							figure.portfolio__card--back 
-								| DETAILS
-								each tool in item.tools
-									span= tool
-								button.portfolio__btn-close CLOSE
+				article.portfolio__item
+					div.portfolio__card
+						figure.portfolio__card--front 
+							div.portfolio__logo(class= item.class, title= item.client)
+							button.portfolio__btn-more MORE
+						figure.portfolio__card--back 
+							each tool in item.tools
+								span= tool
+							button.portfolio__btn-close CLOSE
 
 		section.contact
 			h1 Contact

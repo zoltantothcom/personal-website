@@ -1,24 +1,19 @@
 .portfolio {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	margin: auto;
-	max-width: 840px;
+	max-width: 960px;
 
 	h1 {
 		width: 100%;
-	}
-
-	article {
-		display: flex;
-		margin: .5em 0;
-		width: 50%;
 	}
 }
 
 .portfolio__logo {
 	border: 8px solid #fff;
 	border-radius: 50%;
-	display: flex;
+	display: block;
 	height: 150px;
 	margin: auto;
 	width: 150px;
@@ -30,17 +25,12 @@
 }
 
 .portfolio__item {
-	background: rgba(255, 255, 255, .5);
-	border: 8px solid #fff;
-	border-radius: 8px;
-	display: none;
-	height: auto;
-	margin: 1em auto;
-	max-width: 450px;
-	min-height: 150px;
+	display: flex;
+	height: 240px;
+	margin: 1px auto;
 	perspective: 800px;
 	position: relative;
-	width: 90%;
+	width: 96.5%;
 }
 
 .portfolio__card {
@@ -60,7 +50,7 @@
 	}
 
 	&.flip {
-		transform: rotateX(180deg);
+		transform: rotateY(180deg);
 	}
 }
 
@@ -70,42 +60,35 @@
 
 .portfolio__card--back {
 	background: #D9FAEF;
-	transform: rotateX(180deg);
+	transform: rotateY(180deg);
+
+	span {
+		border-bottom: 1px solid #555;
+		display: block;
+		height: 60px;
+	}
 }
 
 
 @media screen and (min-width: 600px) {
-	.portfolio article {
-		margin-bottom: 1.5em;
-		width: 33.333%;
+	.portfolio__item {
+		flex-direction: row;
+		justify-content: center;
+		margin: 1px;
+		width: 48%;
 	}
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 800px) {
 	.portfolio__item {
-		display: flex;
-	}
-
-	.portfolio article {
-		align-items: center;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		margin-bottom: 3em;
-		width: 100%;
+		width: 33%;
 
 		&:nth-child(even) {
-			.portfolio__logo {
-				margin-left: 2.5em;
-			}
+
 		}
 
 		&:nth-child(odd) {
-			flex-direction: row-reverse;
 
-			.portfolio__logo {
-				margin-right: 2.5em;
-			}
 		}
 	}
 }
