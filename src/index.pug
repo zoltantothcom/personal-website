@@ -50,25 +50,110 @@ html(lang="en")
 						class: 'ifds',
 						client: "International Financial Data Services",
 						title: "Senior Front End Web Developer",
-						tools: ['AngularJS', 'JavaScript', 'LESS']
+						tools: ['logo', 'logo', 'logo', 'logo', 'logo'],
+						names: ['ES6', 'ES6', 'ES6', 'ES6', 'ES6']
 					},
 					{
 						class: 'olg',
 						client: "Ontario Lottery and Gaming",
 						title: "Senior Front End Developer",
-						tools: ['Sass']
+						tools: ['logo'],
+						names: ['ES6']
 					},
 					{
 						class: 'food',
 						client: "Food Network Canada",
 						title: "Front End Developer",
-						tools: ['Sass']
+						tools: ['logo'],
+						names: ['ES6']
 					},
 					{
 						class: 'tgam',
 						client: "The Globe and Mail",
 						title: "Front End Developer",
-						tools: ['Sass']
+						tools: ['logo'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+
+					
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+
+
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
+					},
+					{
+						class: 'tgam',
+						client: "The Globe and Mail",
+						title: "Front End Developer",
+						tools: ['Sass'],
+						names: ['ES6']
 					}
 				]
 
@@ -77,11 +162,14 @@ html(lang="en")
 					div.portfolio__card
 						figure.portfolio__card--front 
 							div.portfolio__logo(class= item.class, title= item.client)
-							button.portfolio__btn-more MORE
+							button.portfolio__btn.portfolio__btn-more MORE
 						figure.portfolio__card--back 
-							each tool in item.tools
-								span= tool
-							button.portfolio__btn-close CLOSE
+							- for (var i = 0; i < 9; i++)
+								span
+									if item.tools[i]
+										img(src="images/" + item.tools[i] + ".png" title=item.names[i])
+
+							button.portfolio__btn.portfolio__btn-close CLOSE
 
 		section.contact
 			h1 Contact
