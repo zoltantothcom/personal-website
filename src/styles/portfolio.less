@@ -15,19 +15,23 @@
 	border-radius: 50%;
 	display: block;
 	height: 150px;
-	margin: 1em auto;
+	margin: 1.65em auto;
 	width: 150px;
 
-	&.ifds { background: #fff url(images/sprite.png) 0 0; }
+	position: relative;
+		left: -1.25em;
+		right: 0;
+
+	&.ifd { background: #fff url(images/sprite.png) 0 0; }
 	&.olg  { background: #fff url(images/sprite.png) 190px 0; }
-	&.food { background: #fff url(images/sprite.png) 0 0; }
-	&.tgam { background: #fff url(images/sprite.png) 190px 0; }
+	&.fnc { background: #fff url(images/sprite.png) 0 0; }
+	&.gam { background: #fff url(images/sprite.png) 190px 0; }
 }
 
 .portfolio__item {
 	border: 1px solid transparent;
 	display: flex;
-	height: 200px;
+	height: 220px;
 	margin: 0 auto .75em;
 	perspective: 800px;
 	position: relative;
@@ -50,45 +54,68 @@
 		backface-visibility: hidden;
 	}
 
+	i {
+		color: lighten(#649F8B, 10%);
+		cursor: pointer;
+		position: absolute;
+			right: 6.5%;
+			bottom: 90px;
+	}
+
 	&.flip {
 		transform: rotateY(180deg);
+
+		.portfolio__card--front {
+			visibility: hidden;
+		}
 	}
 }
 
 .portfolio__card--front {
-	background: rgba(255, 255, 255, 0.25);
+	background: linear-gradient(90deg, 
+		rgba(255, 255, 255, .25) 0, 
+		rgba(255, 255, 255, .25) 85.75%, 
+		rgba(255, 255, 255, 1) 85.75%, 
+		rgba(255, 255, 255, 1) 86%, 
+		rgba(255, 255, 255, .25) 86%, 
+		rgba(250, 250, 250, .55) 86%, 
+		rgba(250, 250, 250, .55) 100%);
 	border: 1px solid #fff;
-	//background: #fff2eb;
+	position: relative;
+	transition-delay: .3s;
 }
 
 .portfolio__card--back {
-	background: #D9FAEF;
-	text-align: center;;
+	background: linear-gradient(90deg, 
+		rgba(255, 255, 255, .25) 0, 
+		rgba(255, 255, 255, .25) 85.75%, 
+		rgba(255, 255, 255, 1) 85.75%, 
+		rgba(255, 255, 255, 1) 86%, 
+		rgba(255, 255, 255, .25) 86%, 
+		rgba(250, 250, 250, .75) 86%, 
+		rgba(250, 250, 250, .75) 100%);
+	text-align: center;
+	position: relative;
 	transform: rotateY(180deg);
 
-	span {
-		display: inline-block;
-		height: 60px;
-		padding: .5em;
-		width: 60px;
+	i {
+		color: darken(#FAB5C5, 10%);
 	}
 }
 
-.portfolio__btn {
-	background: transparent;
-	border: 0;
-	color: #bbb;
-	font: 600 .875em sans-serif;
-	outline: 0;
-	position: fixed;
-		bottom: 1em;
-		right: 1em;
-	transition: .2s linear;
-
-	&:hover {
-		color: #999;
-	}
+.portfolio__tools {
+	margin: .5em 0;
+	width: 86%;
 }
+
+.portfolio__tool {
+	border: 1px solid #fff;
+	display: inline-block;
+	height: 55px;
+	margin: 4px;
+	width: 25%;
+}
+
 
 
 @media screen and (min-width: 600px) {
@@ -115,5 +142,9 @@
 		&:nth-child(odd) {
 
 		}
+	}
+
+	.portfolio__tool {
+		width: 25%;
 	}
 }

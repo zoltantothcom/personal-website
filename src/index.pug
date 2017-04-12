@@ -160,16 +160,16 @@ html(lang="en")
 			each item in companies
 				article.portfolio__item
 					div.portfolio__card
-						figure.portfolio__card--front 
+						figure.portfolio__card--front
 							div.portfolio__logo(class= item.class, title= item.client)
-							button.portfolio__btn.portfolio__btn-more MORE
-						figure.portfolio__card--back 
-							- for (var i = 0; i < 9; i++)
-								span
-									if item.tools[i]
-										img(src="images/" + item.tools[i] + ".png" title=item.names[i])
-
-							button.portfolio__btn.portfolio__btn-close CLOSE
+							i.icon.icon--info-circled
+						figure.portfolio__card--back
+							div.portfolio__tools
+								- for (var i = 0; i < 9; i++)
+									span.portfolio__tool
+										if item.tools[i]
+											img(src="images/" + item.tools[i] + ".png" title=item.names[i])
+							i.icon.icon--cancel-circled
 
 		section.contact
 			h1 Contact

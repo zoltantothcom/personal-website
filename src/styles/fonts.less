@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.eot?26336602');
-    src: url('../font/fontello.eot?26336602#iefix') format('embedded-opentype'),
-    url('../font/fontello.woff2?26336602') format('woff2'),
-    url('../font/fontello.woff?26336602') format('woff'),
-    url('../font/fontello.ttf?26336602') format('truetype'),
-    url('../font/fontello.svg?26336602#fontello') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?88143823');
+  src: url('../font/fontello.eot?88143823#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?88143823') format('woff2'),
+       url('../font/fontello.woff?88143823') format('woff'),
+       url('../font/fontello.ttf?88143823') format('truetype'),
+       url('../font/fontello.svg?88143823#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .icon {
@@ -16,12 +16,14 @@
     font-weight: normal;
     speak: lightsteelblue;
 
-    color: #dcdcdc;// #b0c4de;
+    //color: #dcdcdc;// #b0c4de;
+    color: #777;
     display: inline-block;
+    font-size: 2em;
     text-decoration: inherit;
     width: 16px;
     text-align: center;
-    margin-left: -1em;
+    //margin-left: -1em;
     /* opacity: .8; */
 
     /* For safety - reset parent styles, that can break glyph codes*/
@@ -42,6 +44,16 @@
     /* text-shadow: 1px 1px 1px rgba(27, 27, 27, .75); */
 }
 
+.icon--info-circled:before { content: '\e800'; } /* '' */
 .icon--cancel-1:before { content: '\e801'; } /* '' */
+.icon--cancel-circled:before { content: '\e802'; } /* '' */
+.icon--mail:before { content: '\e803'; } /* '' */
+.icon--folder:before { content: '\e804'; } /* '' */
+.icon--terminal:before { content: '\e805'; } /* '' */
+.icon--link:before { content: '\e806'; } /* '' */
+.icon--comment-alt:before { content: '\e807'; } /* '' */
+.icon--user:before { content: '\e808'; } /* '' */
+.icon--menu:before { content: '\f0c9'; } /* '' */
+.icon--user-secret:before { content: '\f21b'; } /* '' */
 .icon--window-maximize:before { content: '\f2d0'; } /* '' */
 .icon--window-minimize:before { content: '\f2d1'; } /* '' */

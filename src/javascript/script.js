@@ -203,6 +203,6 @@ var cmd = new Console();
 
 // portfolio
 document.querySelector('.portfolio').addEventListener('click', function(e) {
-	if (e.target.nodeName !== 'BUTTON') return;
+	if (e.target.nodeName !== 'I') return;
 	e.target.parentNode.parentNode.classList.toggle('flip');
 });
