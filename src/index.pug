@@ -30,15 +30,15 @@ html(lang="en")
 
 			-
 				var accounts = [
-					{ name: 'LinkedIn', link: "http://linkedin.com" },
-					{ name: 'Stack Overflow', link: "http://stackoverflow.com" },
-					{ name: 'GitHub', link: "http://github.com" }
+					{ name: 'LinkedIn', link: "http://linkedin.com", class: "li" },
+					{ name: 'Stack Overflow', link: "http://stackoverflow.com", class: "so" },
+					{ name: 'GitHub', link: "http://github.com", class: "gh" }
 				]
 			
 			ul
 				each account in accounts
 					li.social__account 
-						a(href=account.link) 
+						a(href=account.link "class"=account.class) 
 							= account.name
 
 		section.portfolio

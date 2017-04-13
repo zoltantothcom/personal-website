@@ -14,34 +14,42 @@
 .social__account {
 	background: rgba(255, 255, 255, 0.25);
 	border: 1px solid #fff;
-	height: 10em;
+	height: 8em;
 	display: flex;
 	margin: 1px;
 	padding: 0;
 	width: 10em;
 
 	a {
-		background-image: url(images/logo.png);
 		background-size: cover;
 		display: block;
 		filter: grayscale(100%);
-		height: 100%;
+		height: 95px;
+		margin: auto;
+		opacity: .5;
 		overflow: hidden;
 		text-indent: 100%;
-		transition: .25s linear;
+		transition: .15s linear;
 		white-space: nowrap;
-		width: 100%;
+		width: 95px;
 
 		&:hover {
-			filter: none
+			filter: none;
+			height: 105px;
+			opacity: 1;
+			width: 105px;
 		}
+
+		&.li { background-image: url(images/linkedin_logo.png); }
+		&.so { background-image: url(images/stackoverflow_logo.png); }
+		&.gh { background-image: url(images/github_logo.png); }
 	} 
 }
 
 
 @media screen and (min-width: 800px) {
 	.social__account {
-		height: 10em;
-		width: 10em;
+		height: 8em;
+		width: 25%;
 	}
 }
