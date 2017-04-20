@@ -1,7 +1,11 @@
-window.addEventListener('load', function() {
+window.onload = function() {
 	document.querySelector('.console').classList.add('visible');
 	document.getElementById('console__input').focus();
-});
+
+	document.querySelector('.Intro').classList.add('is-visible');
+	document.querySelector('.SecretDude').classList.add('is-visible');
+	document.querySelector('.SpeechBubble').classList.add('is-visible');
+};
 
 var messages = {
 	default: [
