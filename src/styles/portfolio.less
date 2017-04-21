@@ -1,4 +1,4 @@
-.portfolio {
+.Portfolio {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -10,7 +10,7 @@
 	}
 }
 
-.portfolio__logo {
+.Portfolio-logo {
 	border: 8px solid #fff;
 	border-radius: 50%;
 	display: block;
@@ -28,8 +28,8 @@
 	&.gam { background: #fff url(images/sprite.png) 190px 0; }
 }
 
-.portfolio__item {
-	border: 1px solid transparent;
+.Portfolio-item {
+	//border: 1px solid transparent;
 	display: flex;
 	height: 220px;
 	margin: 0 auto .75em;
@@ -38,7 +38,7 @@
 	width: 96.5%;
 }
 
-.portfolio__card {
+.Portfolio-card {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -62,16 +62,16 @@
 			bottom: 90px;
 	}
 
-	&.flip {
+	&.is-flip {
 		transform: rotateY(180deg);
 
-		.portfolio__card--front {
+		.Portfolio-cardFront {
 			visibility: hidden;
 		}
 	}
 }
 
-.portfolio__card--front {
+.Portfolio-cardFront {
 	background: linear-gradient(90deg, 
 		rgba(255, 255, 255, .25) 0, 
 		rgba(255, 255, 255, .25) 85.75%, 
@@ -85,7 +85,7 @@
 	transition-delay: .3s;
 }
 
-.portfolio__card--back {
+.Portfolio-cardBack {
 	background: linear-gradient(90deg, 
 		rgba(255, 255, 255, .25) 0, 
 		rgba(255, 255, 255, .25) 85.75%, 
@@ -103,12 +103,12 @@
 	}
 }
 
-.portfolio__tools {
+.Portfolio-tools {
 	margin: .5em 0;
 	width: 86%;
 }
 
-.portfolio__tool {
+.Portfolio-tool {
 	border: 1px solid #fff;
 	display: inline-block;
 	height: 55px;
@@ -119,11 +119,11 @@
 
 
 @media screen and (min-width: 600px) {
-	.portfolio {
+	.Portfolio {
 		justify-content: space-around;
 	}
 
-	.portfolio__item {
+	.Portfolio-item {
 		flex-direction: row;
 		margin-bottom: .875em;
 		width: 47.75%;
@@ -131,7 +131,7 @@
 }
 
 @media screen and (min-width: 800px) {
-	.portfolio__item {
+	.Portfolio-item {
 		margin-bottom: .66em;
 		width: 32%;
 
@@ -144,7 +144,7 @@
 		}
 	}
 
-	.portfolio__tool {
+	.Portfolio-tool {
 		width: 25%;
 	}
 }

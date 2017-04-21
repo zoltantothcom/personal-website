@@ -7,35 +7,10 @@ html(lang="en")
 		link(rel="stylesheet" href="styles.min.css")
 
 	body
-		div.Intro
-			i.SecretDude.icon.icon--user-secret
-			div.SpeechBubble
-				div.SpeechBubble-content
-				//| Pssst.. Want to try something?
-				//input(type="button" value="Yes")
-				//input(type="button" value="No")
+		section.About
+			h1 ...
 
-
-
-		section
-			div.console
-				header.console__header Zoltan Toth
-					ul.console__buttons
-						li: a.console__button.console__button--min(href="#" title="Minimize window")
-							i.icon.icon--window-minimize
-						li: a.console__button.console__button--max(href="#" title="Restore window") 
-							i.icon.icon--window-maximize
-						li: a.console__button.console__button--cls(href="#" title="Close") 
-							i.icon.icon--cancel-1
-
-				div.console__window
-					div.console__message-area
-					div.console__input-container
-						p
-							label(for="console__input") >
-							input#console__input.console__input
-
-		section.social
+		section.Social
 			h1 ...
 
 			-
@@ -51,7 +26,7 @@ html(lang="en")
 						a(href=account.link "class"=account.class) 
 							= account.name
 
-		section.portfolio
+		section.Portfolio
 			h1 ...
 
 			-
@@ -168,15 +143,15 @@ html(lang="en")
 				]
 
 			each item in companies
-				article.portfolio__item
-					div.portfolio__card
-						figure.portfolio__card--front
-							div.portfolio__logo(class= item.class, title= item.client)
+				article.Portfolio-item
+					div.Portfolio-card
+						figure.Portfolio-cardFront
+							div.Portfolio-logo(class= item.class, title= item.client)
 							i.icon.icon--info-circled
-						figure.portfolio__card--back
-							div.portfolio__tools
+						figure.Portfolio-cardBack
+							div.Portfolio-tools
 								- for (var i = 0; i < 9; i++)
-									span.portfolio__tool
+									span.Portfolio-tool
 										if item.tools[i]
 											img(src="images/" + item.tools[i] + ".png" title=item.names[i])
 							i.icon.icon--cancel-circled
