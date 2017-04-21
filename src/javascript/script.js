@@ -1,10 +1,31 @@
 window.onload = function() {
-	document.querySelector('.console').classList.add('visible');
-	document.getElementById('console__input').focus();
+	document.querySelector('.Console').classList.add('visible');
+	document.getElementById('Console-input').focus();
 
 	document.querySelector('.Intro').classList.add('is-visible');
 	document.querySelector('.SecretDude').classList.add('is-visible');
 	document.querySelector('.SpeechBubble').classList.add('is-visible');
+
+	var choices = document.querySelectorAll('.SpeechBubble-content a');
+	for (var i = 0; i < choices.length; i++) {
+		choices[i].addEventListener('click', function(e) {
+			e.preventDefault();
+
+			switch (e.target.innerText) {
+				case 'NO':
+					document.querySelector('.Intro').style.display = 'none';
+					//document.querySelector('.Intro').classList.remove('is-visible');
+					break;
+				case 'YES':
+					document.querySelector('.SpeechBubble').style.display = 'none';
+					document.querySelector('.Intro').classList.add('is-console');
+					document.querySelector('.SecretDude').classList.remove('is-visible');
+					document.querySelector('.Console').classList.add('is-visible');
+					break;
+			}
+		});
+	}
+
 };
 
 var messages = {
@@ -65,7 +86,7 @@ var messages = {
 };
 
 var Console = function() {
-	var input   = document.querySelector('.console input'),
+	var input   = document.querySelector('.Console input'),
 		command = '',
 		historyIndex = 0,
 		self = this;
@@ -177,28 +198,28 @@ Console.prototype.output = function(command) {
 							'\'' + command + '\'' + messages.error + '</span>';
 	}
 
-	document.querySelector('.console__message-area').appendChild(div);
+	document.querySelector('.Console-messageArea').appendChild(div);
 
 	// always scroll to bottom
-	var container = document.querySelector('.console__window');
+	var container = document.querySelector('.Console-window');
 	container.scrollTop = container.scrollHeight;
 };
 
 Console.prototype.clean = function() {
-	document.querySelector('.console__message-area').innerHTML = '';
+	document.querySelector('.Console-messageArea').innerHTML = '';
 	this.output('default');
 };
 
 Console.prototype.hide = function() {
-	document.querySelector('.console__window').style.height = '0';
+	document.querySelector('.Console-window').style.height = '0';
 };
 
 Console.prototype.show = function() {
-	document.querySelector('.console__window').style.height = '370px';
+	document.querySelector('.Console-window').style.height = '370px';
 };
 
 Console.prototype.close = function() {
-	document.querySelector('.console').style.display = 'none';
+	document.querySelector('.Console').style.display = 'none';
 };
 
 var cmd = new Console();

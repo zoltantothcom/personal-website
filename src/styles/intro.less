@@ -10,6 +10,10 @@
 	&.is-visible {
 		opacity: 1;
 	}
+
+	&.is-console {
+		background: #111;
+	}
 }
 
 .SecretDude {
@@ -34,11 +38,12 @@
 	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, .6);
 	background: @speech-bg;
 	border-radius: 50%;
-	height: 14em;
+	height: 20em;
 	opacity: 0;
 	position: relative;
-		left: 35em;
-		top: 16em;
+		left: 5em;
+		//left: 35em;
+		top: 10em;
 	transition: .5s ease;
 	transition-delay: 1s;
 	width: 28em;
@@ -50,8 +55,8 @@
 		display: block;
 		height: 70px;
 		position: absolute;
-			left: 30px;
-			bottom: 10px;
+			left: 52px;
+			bottom: 0px;
 		transform: skew(-45deg, 0deg) rotate(-24deg);
 		width: 100px;
 		z-index: -1;
@@ -66,7 +71,7 @@
     background: lighten(@speech-bg, 40%);
     border: 10px solid @speech-bg;
     border-radius: 50%;
-    height: 91%;
+    height: 95%;
     position: relative;
     width: 96%;
 
@@ -76,8 +81,8 @@
 		display: block;
 		height: 70px;
 		position: absolute;
-			left: 30px;
-			bottom: 10px;
+			left: 55px;
+			bottom: 5px;
 		transform: skew(-45deg, 0deg) rotate(-24deg);
 		width: 100px;
 	}
