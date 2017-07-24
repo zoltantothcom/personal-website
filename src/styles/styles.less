@@ -1,56 +1,32 @@
-@import 'normalize';
-
-@import 'utilities';
-@import 'colors';
-@import 'fonts';
-@import 'console';
-@import 'intro';
 @import 'portfolio';
 @import 'social';
 @import 'contact';
 
 html, body {
 	height: 100%;
+    padding: 0;
 }
 
 body {
-	background: #abecd6;
-	background: linear-gradient(75deg, #abecd6 0%, #fbed96 100%) fixed;
+    background: #fff;
+    margin: auto;
+    width: 80%;
 }
 
 h1 {
-	border-bottom: 1px solid #649F8B;
-	box-shadow: 0 1px  #fff;
-	color: #649F8B;
+	color: #303030;
+    font: 600 32px "Times";
+    letter-spacing: 2.5px;
 	padding: 24px 0;
 	text-align: center;
-	text-shadow: 1px 1px #fff;
+    text-transform: uppercase;
+
+    &:after {
+        background: #f03838;
+        content: "";
+        display: block;
+        height: 3px;
+        margin: .75em auto;
+        width: 200px;
+    }
 }
-
-// EDABC1
-// rgba(237, 214, 171, 1)
-
-// ECB8AB
-// 9F6254
-// D2FFF0
-// 649F8B - nice green
-
-
-// paletton
-//
-// 3
-// ABECD7
-// FAB5C5 - nice red
-// FFE3B9 - nice peach
-//
-// FFE9DE
-// fff2eb - bg for portfolio item?
-// DCEAFA
-// FFF2DE
-// D9FAEF
-//
-// 4
-// ABECD7
-// FFD0B9
-// FFE3B9
-// AFCEEB

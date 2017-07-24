@@ -11,19 +11,20 @@ html(lang="en")
 			h1 ...
 
 		section.Social
-			h1 ...
+			h1 Social
 
 			-
 				var accounts = [
 					{ name: 'LinkedIn', link: "http://linkedin.com", class: "li" },
 					{ name: 'Stack Overflow', link: "http://stackoverflow.com", class: "so" },
-					{ name: 'GitHub', link: "http://github.com", class: "gh" }
+					{ name: 'GitHub', link: "http://github.com", class: "gh" },
+					{ name: 'npm', link: "http://npmjs.com", class: "npm" }
 				]
-			
+
 			ul
 				each account in accounts
-					li.social__account 
-						a(href=account.link "class"=account.class) 
+					li.social__account
+						a(href=account.link "class"=account.class)
 							= account.name
 
 		section.Portfolio
@@ -57,87 +58,6 @@ html(lang="en")
 						client: "The Globe and Mail",
 						title: "Front End Developer",
 						tools: ['logo'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-
-					
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-
-
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
-						names: ['ES6']
-					},
-					{
-						class: 'tgam',
-						client: "The Globe and Mail",
-						title: "Front End Developer",
-						tools: ['Sass'],
 						names: ['ES6']
 					}
 				]
