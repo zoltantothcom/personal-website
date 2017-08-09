@@ -29,13 +29,12 @@
 }
 
 .Portfolio-item {
-	//border: 1px solid transparent;
+	border-bottom: 1px solid #fff;
 	display: flex;
 	height: 220px;
-	margin: 0 auto .75em;
 	perspective: 800px;
 	position: relative;
-	width: 96.5%;
+	width: 100%;
 }
 
 .Portfolio-card {
@@ -72,13 +71,13 @@
 }
 
 .Portfolio-cardFront {
-	background: linear-gradient(90deg, 
-		rgba(255, 255, 255, .25) 0, 
-		rgba(255, 255, 255, .25) 85.75%, 
-		rgba(255, 255, 255, 1) 85.75%, 
-		rgba(255, 255, 255, 1) 86%, 
-		rgba(255, 255, 255, .25) 86%, 
-		rgba(250, 250, 250, .55) 86%, 
+	background: linear-gradient(90deg,
+		rgba(255, 255, 255, .25) 0,
+		rgba(255, 255, 255, .25) 85.75%,
+		rgba(255, 255, 255, 1) 85.75%,
+		rgba(255, 255, 255, 1) 86%,
+		rgba(255, 255, 255, .25) 86%,
+		rgba(250, 250, 250, .55) 86%,
 		rgba(250, 250, 250, .55) 100%);
 	border: 1px solid #fff;
 	position: relative;
@@ -86,13 +85,13 @@
 }
 
 .Portfolio-cardBack {
-	background: linear-gradient(90deg, 
-		rgba(255, 255, 255, .25) 0, 
-		rgba(255, 255, 255, .25) 85.75%, 
-		rgba(255, 255, 255, 1) 85.75%, 
-		rgba(255, 255, 255, 1) 86%, 
-		rgba(255, 255, 255, .25) 86%, 
-		rgba(250, 250, 250, .75) 86%, 
+	background: linear-gradient(90deg,
+		rgba(255, 255, 255, .25) 0,
+		rgba(255, 255, 255, .25) 85.75%,
+		rgba(255, 255, 255, 1) 85.75%,
+		rgba(255, 255, 255, 1) 86%,
+		rgba(255, 255, 255, .25) 86%,
+		rgba(250, 250, 250, .75) 86%,
 		rgba(250, 250, 250, .75) 100%);
 	text-align: center;
 	position: relative;
@@ -132,8 +131,7 @@
 
 @media screen and (min-width: 800px) {
 	.Portfolio-item {
-		margin-bottom: .66em;
-		width: 32%;
+		width: 50%;
 
 		&:nth-child(even) {
 
