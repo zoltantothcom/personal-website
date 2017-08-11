@@ -1,10 +1,13 @@
+@import 'common';
+
 @import 'portfolio';
 @import 'social';
 @import 'contact';
 
 ::selection {
-    background: #00caea;
-    color: #fff;
+    background: @base-blue;
+    color: @base-white;
+;
 }
 
 html, body {
@@ -13,14 +16,14 @@ html, body {
 }
 
 body {
-    background: #e6e6e6;
+    background: @base-grey;
     margin: auto;
     max-width: 800px;
     width: 90%;
 }
 
 h1 {
-	color: #2b2b2b;
+	color: @base-black;
     font: 600 24px 'Poppins';
     letter-spacing: 2.5px;
 	margin: 4em 0 2em;
@@ -28,8 +31,8 @@ h1 {
     text-transform: uppercase;
 
     &:after {
-        background: #00caea;
-        content: "";
+        background: @base-blue;
+        content: '';
         display: block;
         height: 1px;
         margin: .75em auto;

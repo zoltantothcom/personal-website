@@ -4,7 +4,7 @@
 }
 
 .Accounts-links {
-  margin: 100px 0;
+  margin: 100px 0 0;
   position: relative;
 }
 
@@ -13,13 +13,13 @@
 }
 
 .Accounts-item {
-  background: #00caea;
+  background: @base-blue;
   display: block;
   height: 150px;
   margin: 0 12px;
   position: relative;
   transition: .1s all linear;
-  width: 220px;
+  width: 300px;
 
   -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -33,7 +33,7 @@
 
 .Accounts-svg {
   display: flex;
-  fill: #fff;
+  fill: @base-white;
   height: 5em;
   margin: auto;
   width: 5em;
@@ -77,7 +77,7 @@
   color: #00caea;
   content:"GitHub";
   position:absolute;
-  right: calc(~'50% + 69px');
+  right: calc(~'50% + 80px');
   top: -22px;
   width: 33%;
   text-align: left;
@@ -88,11 +88,11 @@
 .github:after{
   content:"";
   position:absolute;
-  left: calc(~'50% - 70px');
+  left: calc(~'50% - 80px');
   top: 10px;
   border-top:1px solid #00caea;
   width:40px;
-  transform: rotate(33deg);
+  transform: rotate(30deg);
   transform-origin: 0;
   z-index: 0;
 }
