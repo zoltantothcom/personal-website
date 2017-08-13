@@ -17,6 +17,7 @@ gulp.task('serve', [ 'script', 'markup', 'styles', 'lint' ], function() {
     });
 
     gulp.watch('src/styles/*.less', ['styles']);
+    gulp.watch('src/**/*.pug', ['markup']);
     gulp.watch('src/*.pug', ['markup']);
 	gulp.watch('src/javascript/*.js', ['script']);
 });
