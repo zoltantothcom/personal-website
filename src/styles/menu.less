@@ -1,0 +1,35 @@
+header {
+    background: @base-white;
+    // background: lavender;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+      
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: auto;
+    max-width: 1200px;
+    padding: 0;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.menu__link {
+    color: @base-black;
+    display: inline-block;
+    font: 600 20px 'Poppins';
+    height: 3em;
+    line-height: 3em;
+    margin: 0 .5em 0 2.5em;
+    text-decoration: none;
+    transition: .2s linear;
+
+    &:hover {
+        color: @base-blue;
+    }
+}
