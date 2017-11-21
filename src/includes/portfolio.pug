@@ -20,40 +20,43 @@ section.Portfolio
     -
         var companies = [
             {
+                class: 'indi',
+                client: "Indigo",
+                title: "Senior Front End Developer",
+                names: ['HTML5', 'React', 'Sass', 'Docker', 'ES6', 'Webpack']
+            },
+            {
                 class: 'ifds',
                 client: "International Financial Data Services",
                 title: "Senior Front End Web Developer",
-                tools: ['logo', 'logo', 'logo', 'logo', 'logo'],
-                names: ['ES6', 'ES6', 'ES6', 'ES6', 'ES6']
+                names: ['HTML5', 'AngularJS', 'Sass', 'Webpack']
             },
             {
                 class: 'olg',
                 client: "Ontario Lottery and Gaming",
                 title: "Senior Front End Developer",
-                tools: ['logo'],
-                names: ['ES6']
+                names: ['HTML5', 'Sass', 'Less', 'JavaScript', 'AngularJS']
             },
             {
                 class: 'food',
                 client: "Food Network Canada",
                 title: "Front End Developer",
-                tools: ['logo'],
-                names: ['ES6']
+                names: ['HTML5', 'Sass', 'Less', 'JavaScript']
             },
             {
                 class: 'tgam',
                 client: "The Globe and Mail",
                 title: "Front End Developer",
-                tools: ['logo'],
-                names: ['ES6']
+                names: ['HTML5', 'Sass', 'JavaScript']
             }
         ]
 
     each item in companies
+        - name = item.names
         article.portfolio__item
             .portfolio__item-flip
                 .portfolio__item-front
                     img(src="images/logo_indigo.png" alt="Indigo")
                 .portfolio__item-back
-                    | React, Redux
-
+                    each item in name
+                        | #{item} 
