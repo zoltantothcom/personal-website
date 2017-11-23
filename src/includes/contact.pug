@@ -3,14 +3,19 @@ section.Contact
 
     form
         div.Contact-container
-            label.Contact-label(for="name") Name
-            input#name.Contact-text
+            label.Contact-label(for="name") name
+            input.Contact-input
 
         //- label(for="phone") Phone
         //- input#phone(placeholder="Phone")
 
-        //- label(for="mail") Email
-        //- input#mail(placeholder="Email")
+        div.Contact-container
+            label.Contact-label(for="email") email
+            input.Contact-input
+
+        div.Contact-container
+            label.Contact-label(for="message") message
+            textarea.Contact-input.is-textarea
 
         //- label(for="mess") Message
         //- textarea#mess(placeholder="Message")
