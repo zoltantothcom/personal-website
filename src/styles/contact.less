@@ -1,6 +1,47 @@
 .Contact {
+	margin: auto;
+	max-width: 800px;
+}
+
+.Contact-container {
+
+	&.is-active {
+		.Contact-label {
+			font-size: 1.5rem;
+			transform: translateY(0);
+		}
+	}
+}
+
+.Contact-label {
+	display: block;
+	font-size: 2.25rem;
+	transform: translateY(4.5rem);
+	transition: all 0.5s;
+}
+
+.Contact-text {
+	// background: ivory;
+	border: 0;
+	border-bottom: 2px solid #222;
+	display: block;
+	font-size: 2.25em;
+	height: 3rem;
+	margin: 1rem 0 2rem;
+	outline: 0;
+	padding: .5rem 0;
+}
+
+
+
+
+.contact {
 	margin: 6em auto;
 	max-width: 840px;
+
+	h1 {
+		position: relative;
+	}
 }
 
 .Contact-form {
@@ -14,7 +55,6 @@
 	height: 2em;
 	margin: 1em auto 2em;
 	padding: .5em;
-	width: 90%;
 }
 
 .Contact-textarea {
