@@ -1,13 +1,14 @@
 section.Contact
-    h1 Contact
+    span.intro__title Contact
 
     form
         div.Contact-container
             label.Contact-label(for="name") name
             input#name.Contact-input
 
-        //- label(for="phone") Phone
-        //- input#phone(placeholder="Phone")
+        div.Contact-container.is-hidden
+            label.Contact-label(for="phone") phone
+            input#phone.Contact-input
 
         div.Contact-container
             label.Contact-label(for="email") email
