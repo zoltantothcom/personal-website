@@ -27,9 +27,10 @@ for (var i = 0; i < inputs.length; i++) {
 }
 
 
-// document.getElementById('name').addEventListener('focus', function(e) {
-// 	e.target.parentNode.classList.add('is-active', 'is-completed');
-// });
-// document.getElementById('name').addEventListener('blur', function(e) {
-// 	e.target.parentNode.classList.remove('is-active');
-// });
+var textarea = document.querySelector('.is-textarea');
+var offset = textarea.offsetHeight - textarea.clientHeight;
+
+textarea.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + offset + 'px';
+}, false);
