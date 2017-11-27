@@ -92,12 +92,21 @@
 }
 
 .Contact-button {
-	border: 1px solid red;
+	background-color: #222;
+	border: 0;
+	color: @base-white;
 	display: block;
-	height: 48px;
-	line-height: 48px;
+	font: 400 2.25rem 'Poppins', Arial, Helvetica, sans-serif;
+	height: 72px;
+	line-height: 72px;
 	margin: auto;
 	width: 33%;
+	transition: .15s;
+
+	&:hover {
+		background-color: @base-blue;
+		cursor: pointer;
+	}
 }
 
 
