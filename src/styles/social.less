@@ -1,30 +1,8 @@
-.Accounts-clip {
-  height: 0;
-  width: 0;
-}
-
-.Accounts-links {
-  margin: 100px 0 0;
-  position: relative;
-}
-
 .Accounts-row {
-  text-align: center;
+
 }
 
 .Accounts-item {
-  background: @base-black;
-  display: block;
-  height: 125px;
-  margin: 0 4px;
-  position: relative;
-  transition: .1s all linear;
-  width: 250px;
-
-  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  clip-path: url("#clip-diamond");
-
   // &--lin:hover { background: #0077b5; }
   // &--git:hover { background: #181717; }
   // &--sow:hover { background: #fe7a16; }
@@ -35,68 +13,6 @@
   &--npm:hover { background: @base-blue; }
 }
 
-.Accounts-svg {
-  display: flex;
-  fill: @base-white;
-  height: 4em;
-  margin: auto;
-  width: 4em;
-}
-
-
 @media only screen and (min-width: 450px) {
-  .Accounts-row {
-    margin-top: -60px;
 
-    &:first-of-type {
-      margin-top: auto;
-    }
-  }
-
-  .Accounts-item {
-    display: inline-flex;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.github:before {
-  display: block;
-  height: 2em;
-  color: #00caea;
-  content:"GitHub";
-  position:absolute;
-  right: calc(~'50% + 80px');
-  top: -22px;
-  width: 33%;
-  text-align: left;
-  text-indent: 1em;
-  border-bottom: 1px solid #00caea;
-}
-
-.github:after{
-  content:"";
-  position:absolute;
-  left: calc(~'50% - 80px');
-  top: 10px;
-  border-top:1px solid #00caea;
-  width:40px;
-  transform: rotate(30deg);
-  transform-origin: 0;
-  z-index: 0;
 }
