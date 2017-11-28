@@ -16,3 +16,47 @@
 @media only screen and (min-width: 450px) {
 
 }
+
+
+
+
+
+
+
+
+a {
+  display: inline-block;
+  position: relative;
+}
+
+
+.progress {
+  transform: rotate(-90deg);
+}
+
+.progress__value {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  animation: linear regress .25s 1 forwards;
+}
+
+@keyframes progress {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes regress {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 339.292; }
+}
+
+.account-link {
+  display: inline-block;
+  position: relative;
+}
+
+.account-link:hover {
+  
+  .progress__value {
+    animation: linear progress .25s 1 forwards;
+  }
+}
