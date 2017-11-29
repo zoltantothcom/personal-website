@@ -4,6 +4,39 @@
 @base-blue: #00caea;
 @base-grey: #e6e6e6;
 
+::selection {
+    background: @base-blue;
+    color: @base-white;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: @base-white;
+    margin: auto;
+}
+
+h1 {
+	color: @base-black;
+    font: 600 24px 'Poppins';
+    letter-spacing: 2.5px;
+	margin: 4em 0 2em;
+	text-align: center;
+    text-transform: uppercase;
+
+    &:after {
+        background: @base-blue;
+        content: '';
+        display: block;
+        height: 1px;
+        margin: .75em auto;
+        width: 200px;
+    }
+}
+
 .is-hidden {
     display: none;
 }
