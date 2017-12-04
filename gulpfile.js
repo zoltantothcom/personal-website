@@ -12,7 +12,7 @@ var pkg      = require('./package.json'),
 // static Server + watching less/html files
 gulp.task('serve', [ 'script', 'markup', 'styles', 'lint' ], function() {
     browSync.init({
-        server: './dist',
+        server: './docs',
         online: false
     });
 
@@ -28,7 +28,7 @@ gulp.task('script', ['lint'], function() {
 		.pipe(rename({ 
 			suffix: '.min' 
 		}))
-		.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./docs'))
 		.pipe(browSync.stream());
 });
 
@@ -37,7 +37,7 @@ gulp.task('markup', function() {
 		.pipe(pug({
 			pretty: true
 		}))
-		.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./docs'))
 		.pipe(browSync.stream());
 });
 
@@ -50,7 +50,7 @@ gulp.task('styles', function() {
 		.pipe(rename({ 
 			suffix: '.min' 
 		}))
-		.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./docs'))
 		.pipe(browSync.stream());
 });
 
