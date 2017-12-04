@@ -1,56 +1,76 @@
 .Portfolio {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
-	max-width: 960px;
-	height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    max-width: 960px;
+    height: 100vh;
 }
 
 .portfolio__item {
-	background: url(images/logo_indigo.png);
-	perspective: 1000px;
+    margin: 8px;
+		perspective: 1000px;
+
+		@names: indigo, sunlife, olg, food-network, globe, aeroplan,
+						home-depot, loreal, reebok, rexall, ryerson-university;
+		@length: length(@names);
+
+		.set-background(@names; @index) when (@index > 0) {
+			.set-background(@names; (@index - 1));
+
+			@name: extract(@names, @index);
+
+			&.is-@{name} {
+				background: url("images/@{name}.png");
+				.portfolio__item-front { background: url("images/@{name}_bw.png") }
+			}
+		}
+
+		.set-background(@names; @length);
 }
 
-.portfolio__item:hover .portfolio__item-flip, 
+.portfolio__item:hover .portfolio__item-flip,
 .portfolio__item.hover .portfolio__item-flip {
-	transform: rotateX(180deg);
-  }
-  
- 
-  .portfolio__item-flip {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-  }
-  
-.portfolio__item-front, 
-.portfolio__item-back {
-	backface-visibility: hidden;
-	position: absolute;
+    transform: rotateX(180deg);
 }
-  
-  .portfolio__item-front {
-	z-index: 2;
-	transform: rotateX(0deg);
-  }
-  
-  .portfolio__item-back {
-	transform: rotateX(180deg);
-	background: lavender;
-  }
+
+.portfolio__item-flip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.portfolio__item-front,
+.portfolio__item-back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.portfolio__item-front {
+    z-index: 2;
+		overflow: hidden;
+		text-indent: 100%;
+		transform: rotateX(0deg);
+		white-space: nowrap;
+}
+
+.portfolio__item-back {
+    transform: rotateX(180deg);
+    background: lavender;
+}
 
 .portfolio__item,
 .portfolio__item-back,
 .portfolio__item-front {
-	height: 200px;
-	width: 400px;
+    height: 200px;
+    width: 200px;
 }
+
+
+
 
 img {
     filter: grayscale(1)
 }
 
-@media screen and (min-width: 800px) {
-
-}
+@media screen and (min-width: 800px) {}

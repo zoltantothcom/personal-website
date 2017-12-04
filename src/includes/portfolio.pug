@@ -20,13 +20,13 @@ section.Portfolio
     -
         var companies = [
             {
-                class: 'indi',
-                client: "Indigo",
+                class: 'indigo',
+                client: "Indigo Books and Music",
                 title: "Senior Front End Developer",
                 names: ['HTML5', 'React', 'Sass', 'Docker', 'ES6', 'Webpack']
             },
             {
-                class: 'ifds',
+                class: 'sunlife',
                 client: "International Financial Data Services",
                 title: "Senior Front End Web Developer",
                 names: ['HTML5', 'AngularJS', 'Sass', 'Webpack']
@@ -38,14 +38,50 @@ section.Portfolio
                 names: ['HTML5', 'Sass', 'Less', 'JavaScript', 'AngularJS']
             },
             {
-                class: 'food',
+                class: 'food-network',
                 client: "Food Network Canada",
                 title: "Front End Developer",
                 names: ['HTML5', 'Sass', 'Less', 'JavaScript']
             },
             {
-                class: 'tgam',
+                class: 'globe',
                 client: "The Globe and Mail",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'aeroplan',
+                client: "Aeroplan",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'home-depot',
+                client: "The Home Depot",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'loreal',
+                client: "L'Oreal",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'reebok',
+                client: "Reebok",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'rexall',
+                client: "Rexall",
+                title: "Front End Developer",
+                names: ['HTML5', 'Sass', 'JavaScript']
+            },
+            {
+                class: 'ryerson-university',
+                client: "Ryerson University",
                 title: "Front End Developer",
                 names: ['HTML5', 'Sass', 'JavaScript']
             }
@@ -53,10 +89,10 @@ section.Portfolio
 
     each item in companies
         - name = item.names
-        article.portfolio__item
+        article(class="portfolio__item is-" + item.class)
             .portfolio__item-flip
                 .portfolio__item-front
-                    img(src="images/logo_indigo.png" alt="Indigo")
+                    | #{item.client}
                 .portfolio__item-back
                     each item in name
                         | #{item} 
