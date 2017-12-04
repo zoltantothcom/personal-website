@@ -7,76 +7,76 @@ section.portfolio
                 class: 'indigo',
                 client: "Indigo Books and Music",
                 title: "Senior Front End Developer",
-                names: ['HTML5', 'React', 'Sass', 'Docker', 'ES6', 'Webpack']
+                stack: ['html', 'css', 'sass', 'javascript', 'json', 'babel', 'jest', 'webpack', 'nodejs', 'git', 'docker']
             },
             {
                 class: 'sunlife',
                 client: "International Financial Data Services",
                 title: "Senior Front End Web Developer",
-                names: ['HTML5', 'AngularJS', 'Sass', 'Webpack']
+                stack: ['html', 'css', 'sass', 'javascript', 'json', 'angular', 'jasmine', 'webpack', 'git', 'gitlab']
             },
             {
                 class: 'olg',
                 client: "Ontario Lottery and Gaming",
                 title: "Senior Front End Developer",
-                names: ['HTML5', 'Sass', 'Less', 'JavaScript', 'AngularJS']
+                stack: ['html', 'css', 'sass', 'javascript', 'json', 'angular', 'firebase', 'gulp', 'git']
             },
             {
                 class: 'food-network',
                 client: "Food Network Canada",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'Less', 'JavaScript']
+                stack: ['html', 'css', 'sass', 'less', 'javascript', 'git']
             },
             {
                 class: 'globe',
                 client: "The Globe and Mail",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'sass', 'javascript', 'backbone', 'git']
             },
             {
                 class: 'aeroplan',
                 client: "Aeroplan",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'less', 'javascript']
             },
             {
                 class: 'home-depot',
                 client: "The Home Depot",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'javascript']
             },
             {
                 class: 'loreal',
                 client: "L'Oreal",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'javascript', 'php']
             },
             {
                 class: 'reebok',
                 client: "Reebok",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'actionscript', 'flash', 'php']
             },
             {
                 class: 'rexall',
                 client: "Rexall",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'email']
             },
             {
                 class: 'ryerson-university',
                 client: "Ryerson University",
                 title: "Front End Developer",
-                names: ['HTML5', 'Sass', 'JavaScript']
+                stack: ['html', 'css', 'javascript', 'php']
             }
         ]
 
     each item in companies
-        - name = item.names
+        - stack = item.stack
         article(class="portfolio__item is-" + item.class)
             .portfolio__item-flip
                 .portfolio__item-front
                     | #{item.client}
                 .portfolio__item-back
-                    each item in name
-                        | #{item} 
+                    each tech in stack
+                        img(src="images/logos/tech/" + tech + ".svg" alt=tech title=tech)
