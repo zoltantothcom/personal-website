@@ -16,14 +16,14 @@
 		@length: length(@names);
 
 		.set-background(@names; @index) when (@index > 0) {
-			.set-background(@names; (@index - 1));
+				.set-background(@names; (@index - 1));
 
-			@name: extract(@names, @index);
+				@name: extract(@names, @index);
 
-			&.is-@{name} {
-				background: url("images/@{name}.png");
-				.portfolio__item-front { background: url("images/@{name}_bw.png") }
-			}
+				&.is-@{name} {
+						background: url("images/logos/work/@{name}.png");
+						.portfolio__item-front { background: url("images/logos/work/@{name}_bw.png") }
+				}
 		}
 
 		.set-background(@names; @length);
