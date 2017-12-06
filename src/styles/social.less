@@ -1,63 +1,49 @@
-.Accounts-row {
-
+.social__link {
+    display: inline-block;
+    margin-left: 2em;
+    position: relative;
+    
+    &--lin:hover {
+        background: @blue;
+    }
+    &--git:hover {
+        background: @blue;
+    }
+    &--sow:hover {
+        background: @blue;
+    }
+    &--npm:hover {
+        background: @blue;
+    }
 }
 
-.Accounts-item {
-  // &--lin:hover { background: #0077b5; }
-  // &--git:hover { background: #181717; }
-  // &--sow:hover { background: #fe7a16; }
-  // &--npm:hover { background: #cb3837; }
-  &--lin:hover { background: @base-blue; }
-  &--git:hover { background: @base-blue; }
-  &--sow:hover { background: @base-blue; }
-  &--npm:hover { background: @base-blue; }
+.social__link:hover {
+    .progress__value {
+        animation: linear progress .25s 1 forwards;
+    }
 }
-
-@media only screen and (min-width: 450px) {
-
-}
-
-
-
-
-
-
-
-
-a {
-  display: inline-block;
-  position: relative;
-}
-
 
 .progress {
-  transform: rotate(-90deg);
+    transform: rotate(-90deg);
 }
 
 .progress__value {
-  stroke-dasharray: 339.292;
-  stroke-dashoffset: 339.292;
-  animation: linear regress .25s 1 forwards;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+    animation: linear regress .25s 1 forwards;
 }
 
 @keyframes progress {
-  to { stroke-dashoffset: 0; }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 @keyframes regress {
-  from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: 339.292; }
-}
-
-.account-link {
-  display: inline-block;
-  margin-left: 2em;
-  position: relative;
-}
-
-.account-link:hover {
-  
-  .progress__value {
-    animation: linear progress .25s 1 forwards;
-  }
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 339.292;
+    }
 }

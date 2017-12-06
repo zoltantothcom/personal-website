@@ -1,32 +1,27 @@
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    max-width: 960px;
-    height: 100vh;
+
 }
 
 .portfolio__item {
     margin: 8px;
-		perspective: 1000px;
+	perspective: 1000px;
 
-		@names: indigo, sunlife, olg, food-network, globe, aeroplan,
-						home-depot, loreal, reebok, rexall, ryerson-university;
-		@length: length(@names);
+	@names: indigo, sunlife, olg, food-network, globe, aeroplan,
+			home-depot, loreal, reebok, rexall, ryerson-university;
+	@length: length(@names);
 
-		.set-background(@names; @index) when (@index > 0) {
-				.set-background(@names; (@index - 1));
+	.set-background(@names; @index) when (@index > 0) {
+		.set-background(@names; (@index - 1));
 
-				@name: extract(@names, @index);
+		@name: extract(@names, @index);
 
-				&.is-@{name} {
-						background: url("images/logos/work/@{name}.png");
-						.portfolio__item-front { background: url("images/logos/work/@{name}_bw.png") }
-				}
+		&.is-@{name} {
+			background: url("images/logos/work/@{name}.png");
+			.portfolio__item-front { background: url("images/logos/work/@{name}_bw.png") }
 		}
+	}
 
-		.set-background(@names; @length);
+	.set-background(@names; @length);
 }
 
 .portfolio__item:hover .portfolio__item-flip,
@@ -37,13 +32,14 @@
 .portfolio__item-flip {
     transition: 0.6s;
     transform-style: preserve-3d;
-    position: relative;
+	position: relative;
 }
 
 .portfolio__item-front,
 .portfolio__item-back {
     backface-visibility: hidden;
-    position: absolute;
+	position: absolute;
+	z-index: 1;
 }
 
 .portfolio__item-front {
@@ -56,7 +52,7 @@
 
 .portfolio__item-back {
     transform: rotateX(180deg);
-		background: lavender;
+		background: @grey;
 		
 		img {
 				display: inline-block;

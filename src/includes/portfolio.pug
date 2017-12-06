@@ -1,5 +1,5 @@
-section.portfolio
-    h1 Brands
+section.portfolio.content
+    h1.content__title portfolio
 
     -
         var companies = [
@@ -60,12 +60,13 @@ section.portfolio
             }
         ]
 
-    each item in companies
-        - stack = item.stack
-        article(class="portfolio__item is-" + item.class)
-            .portfolio__item-flip
-                .portfolio__item-front
-                    | #{item.client}
-                .portfolio__item-back
-                    each tech in stack
-                        img(src="images/logos/tech/" + tech + ".svg" alt=tech title=tech)
+    .content__container.content__container--space-around
+        each item in companies
+            - stack = item.stack
+            article(class="portfolio__item is-" + item.class)
+                .portfolio__item-flip
+                    .portfolio__item-front
+                        | #{item.client}
+                    .portfolio__item-back
+                        each tech in stack
+                            img(src="images/logos/tech/" + tech + ".svg" alt=tech title=tech)
