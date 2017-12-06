@@ -1,21 +1,22 @@
-.Contact {
-	margin: 5em auto 0;
-
-	h1 {
-		font: 400 4.5rem 'Times New Roman', Times, serif;
-		letter-spacing: 3px;
-		margin: 1em 0;
-		text-transform: none;
-	}
+.contact {
+	.content;
 }
 
-.Contact-container {
-	position: relative;
+.contact__title {
+	.content__title;
+}
+
+.contact__container {
+	.content__container;
+}
+
+.contact__field {
 	border: 1px solid transparent;
 	margin: 1em 0 2em;
+	position: relative;
 
 	&.is-active {
-		.Contact-label {
+		.contact__label {
 			color: @blue;
 		}
 
@@ -25,7 +26,7 @@
 	}
 
 	&.is-completed {
-		.Contact-label {
+		.contact__label {
 			font-size: 1.25rem;
 			transform: translateY(0);
 		}
@@ -50,11 +51,11 @@
 	}
 }
 
-.Contact-label {
+.contact__label {
 	backface-visibility: hidden;
 	cursor: text;
 	display: block;
-	font: 400 2.25rem 'Poppins', Arial, Helvetica, sans-serif;
+	font: 400 2.25rem @font-poppins;
 	position: absolute;
 		left: 0;
 		top: 0;
@@ -63,11 +64,11 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.Contact-input {
+.contact__input {
 	border: 0;
 	border-bottom: 2px solid @dark;
 	display: block;
-	font-size: 2.25em;
+	font-size: 2.25rem;
 	height: 3rem;
 	margin: 1rem 0 0;
 	outline: 0;
@@ -86,24 +87,16 @@
 }
 
 
-.contact {
-	margin: 6em auto;
-	max-width: 840px;
-
-	h1 {
-		position: relative;
-	}
-}
-
-.Contact-button {
+.contact__button {
 	background-color: @dark;
 	border: 0;
 	color: @pale;
 	display: block;
-	font: 400 2.25rem 'Poppins', Arial, Helvetica, sans-serif;
+	font: 400 2.25rem @font-poppins;
 	height: 72px;
 	line-height: 72px;
-	margin: auto;
+	margin: 4rem auto 0;
+	min-width: 10rem;
 	width: 33%;
 	transition: .15s;
 
