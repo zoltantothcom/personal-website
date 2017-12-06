@@ -3,13 +3,13 @@ window.onload = function() {
 };
 
 // portfolio
-document.querySelector('.Portfolio').addEventListener('click', function(e) {
+document.querySelector('.portfolio').addEventListener('click', function(e) {
 	if (e.target.nodeName !== 'I') return;
 	e.target.parentNode.parentNode.classList.toggle('is-flip');
 });
 
 
-var inputs = document.querySelectorAll('.Contact-input');
+var inputs = document.querySelectorAll('.contact__input');
 console.log(inputs)
 
 for (var i = 0; i < inputs.length; i++) {
