@@ -25,11 +25,18 @@ header {
     font: 600 20px @font-poppins;
     height: 3em;
     line-height: 3em;
-    margin: 0 .5em 0 2.5em;
+    margin: 0 .5em;
     text-decoration: none;
     transition: .2s linear;
 
     &:hover {
         color: @blue;
+    }
+}
+
+
+@media screen and (min-width: 450px) {
+    .menu__link {
+        margin: 0 .5em 0 2.5em;
     }
 }
