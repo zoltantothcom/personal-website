@@ -1,27 +1,58 @@
 .intro {
-    background: url(images/toronto.png) no-repeat center bottom;
+    background: url(images/toronto.png) repeat-x 50% bottom;
     box-shadow: 0 61px 0 @dark;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.5rem;
     height: calc(100vh - 3em);
-    width: 100%;
 }
 
 .intro__container {
-    background: @pale;
+    background: rgba(255, 255, 255, .75);
     border-radius: 1rem;
+    font-size: 2rem;
     line-height: 1.33;
+    
+    max-width: 650px;
     padding: 1rem;
     position: relative;
-      left: 30vw;
-      top: 15vh;
-    width: 800px;
+        
+        top: 12vh;
 }
 
 .intro__title {
     color: @blue;
     display: block;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: normal;
     text-shadow: none;
+}
+
+@media only screen and (min-width: 480px) {
+    .intro__container {
+        font-size: 2.25rem;
+    }
+
+    .intro__title {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .intro__container {
+        font-size: 2.5rem;
+        left: 10%;
+        max-width: 600px;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .intro__container {
+        left: 30%
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .intro__container {
+        left: 40%
+    }
 }
