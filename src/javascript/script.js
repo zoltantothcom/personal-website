@@ -2,15 +2,33 @@ window.onload = function() {
 
 };
 
-// portfolio
-document.querySelector('.portfolio').addEventListener('click', function(e) {
-	if (e.target.nodeName !== 'I') return;
-	e.target.parentNode.parentNode.classList.toggle('is-flip');
+// menu
+document.querySelector('.menu').addEventListener('click', function(e) {
+	e.preventDefault();
+
+	if (e.target.className !== 'menu__link') return;
+
+	var parts = e.target.href.split('/');
+
+	document.querySelector(parts[parts.length - 1]).scrollIntoView({ 
+		behavior: 'smooth',
+		block: 'start'
+	});
 });
 
+// portfolio
+document.querySelector('.portfolio').addEventListener('click', function(e) {
+	if (e.target.classList.contains('portfolio__item-front')) {
+		e.target.parentNode.parentNode.classList.add('hover');
+	}
 
+	if (e.target.classList.contains('hover')) {
+		e.target.classList.remove('hover');
+	}
+});
+
+// contact
 var inputs = document.querySelectorAll('.contact__input');
-console.log(inputs)
 
 for (var i = 0; i < inputs.length; i++) {
 	inputs[i].addEventListener('focus', function(e) {
