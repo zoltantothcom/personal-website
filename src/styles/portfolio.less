@@ -3,14 +3,15 @@
 }
 
 .portfolio__item {
-	border: 1px solid @grey;
+	border-bottom: 2px solid transparent;
 	cursor: pointer;
-    margin: 1rem .5rem;
+	margin: 1rem .5rem;
+	outline: 1px solid @grey;
 	perspective: 1000px;
 	transition: all .2s linear;
 
 	&:hover {
-		border-bottom-color: @blue;
+		border-bottom: 2px solid @blue;
 	}
 
 	@names: indigo, sunlife, olg, food-network, globe, aeroplan,
