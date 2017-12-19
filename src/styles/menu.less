@@ -8,15 +8,16 @@ header {
 
 .menu {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
 }
       
 .menu__list {
-    display: none;
     list-style: none;
     margin: auto;
     max-width: 1200px;
-    padding: 0;
+    padding: 1rem 0 0;
+    width: 100%;
 }
 
 .menu__button {
@@ -37,12 +38,12 @@ header {
 .menu__item {
     color: @dark;
     display: inline-block;
-    font: 600 1.25rem @font-poppins;
-    height: 3rem;
-    line-height: 3rem;
-    margin: 0 .5rem;
+    font: 600 2.25rem @font-poppins;
+    margin: .75rem .5rem;
+    text-align: center;
     text-decoration: none;
     transition: .2s linear;
+    width: 100%;
 
     &:hover {
         color: @blue;

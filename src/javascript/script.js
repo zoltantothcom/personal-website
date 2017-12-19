@@ -1,9 +1,15 @@
-document.addEventListener("DOMContentLoaded", function (e) {
+document.addEventListener('DOMContentLoaded', function (e) {
 	// menu
-	document.querySelector('.menu').addEventListener('click', function (e) {
+	document.querySelector('.menu__button').addEventListener('click', function () {
+		document.querySelector('.menu__list').classList.toggle('is-hidden');
+	}, false);
+
+	document.querySelector('.menu__list').addEventListener('click', function (e) {
 		e.preventDefault();
 
-		if (e.target.className !== 'menu__link') return;
+		if (e.target.className !== 'menu__item') return;
+
+		document.querySelector('.menu__list').classList.add('is-hidden');
 
 		var parts = e.target.href.split('/');
 
