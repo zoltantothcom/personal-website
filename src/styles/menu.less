@@ -1,25 +1,40 @@
 header {
     background: @pale;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 9999;
-  }
-      
+}
+
 .menu {
     display: flex;
     justify-content: flex-end;
+}
+      
+.menu__list {
+    display: none;
     list-style: none;
     margin: auto;
     max-width: 1200px;
     padding: 0;
-
-    li {
-        display: inline-block;
-    }
 }
 
-.menu__link {
+.menu__button {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABkSURBVGhD7djBDYAgDEBRJjBxYfdwLRfSMgGcoKnvJf/eHpoQGgBQ3BXdyeszDj3Rm7w+45BFFja1SJkbAWCLIzqT12cc8kRZmEWyNbVImWMHYAsfdAv71xOlzCI+6ACArVr7AD89CA+8gvNUAAAAAElFTkSuQmCC);
+    background-size: contain;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 3rem;
+    margin: 2rem;
+    overflow: hidden;
+    padding: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 3rem;
+}
+
+.menu__item {
     color: @dark;
     display: inline-block;
     font: 600 1.25rem @font-poppins;
@@ -35,8 +50,16 @@ header {
 }
 
 
-@media only screen and (min-width: 450px) {
-    .menu__link {
-        margin: 0 .5em 0 2.5em;
-    }
+@media only screen and (min-width: 640px) {
+    // .menu__button {
+    //     display: none;
+    // }
+
+    // .menu__list {
+    //     display: block;
+    // }
+
+    // .menu__item {
+    //     margin: 0 .5em 0 2.5em;
+    // }
 }
