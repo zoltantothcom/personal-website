@@ -3,16 +3,25 @@ footer {
     display: flex;
     align-items: flex-end;
     font: 400 14px 'Poppins';
-    height: 3em;
     justify-content: center;
-    margin-top: 15em;
     padding: 2em 0 .5em;
-    overflow: hidden;
     position: relative;
     text-align: center;
     
     p {
         color: @pale;
+        font-size: 1.75rem;
         z-index: 999;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    footer {
+        margin-top: 15rem;
+
+        p {
+            font-size: 1rem;
+        }
     }
 }
