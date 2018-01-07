@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function (e) {
 	// menu
-	document.querySelector('.menu__button').addEventListener('click', function () {
+	var clickEvent = ('ontouchstart' in window ? 'touchend' : 'click');
+
+	document.querySelector('.menu__button').addEventListener(clickEvent, function (e) {
+		e.preventDefault();
 		document.querySelector('.menu__list').classList.toggle('is-hidden');
 	}, false);
 
