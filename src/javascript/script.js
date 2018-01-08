@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 	document.querySelector('.menu__button').addEventListener(clickEvent, function (e) {
 		e.preventDefault();
 		document.querySelector('.menu__list').classList.toggle('is-hidden');
+		document.querySelector('.menu__button').classList.toggle('is-open');
 	}, false);
 
 	document.querySelector('.menu__list').addEventListener('click', function (e) {
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 		if (e.target.className !== 'menu__item') return;
 
 		document.querySelector('.menu__list').classList.add('is-hidden');
+		document.querySelector('.menu__button').classList.remove('is-open');
 
 		var parts = e.target.href.split('/');
 
