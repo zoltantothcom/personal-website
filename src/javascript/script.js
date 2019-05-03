@@ -61,9 +61,16 @@ document.addEventListener('DOMContentLoaded', function (e) {
 	}, false);
 
 	// temp
+var form = document.getElementById("form")
+
 	document.querySelector('.contact__button').addEventListener('click', function (e) {
 		e.preventDefault();
 
-		document.querySelector('.contact__under-development').classList.remove('is-hidden');
+
+
+		var FD = new FormData(form)
+		console.log(FD)
+
+	// 	document.querySelector('.contact__under-development').classList.remove('is-hidden');
 	});
 });

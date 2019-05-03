@@ -2,24 +2,24 @@ section#contact.contact
     h1.contact__title contact
 
     .contact__container
-        form.contact__form
+        form#form.contact__form(action="https://jumprock.co/mail/zoltantoth" method="post")
             .contact__field
                 label.contact__label(for="name") name
-                input#name.contact__input
+                input#name.contact__input(name="name")
 
             .contact__field.is-hidden
                 label.contact__label(for="phone") phone
-                input#phone.contact__input
+                input#phone.contact__input(name="trapit")
 
             .contact__field
                 label.contact__label(for="email") email
-                input#email.contact__input
+                input#email.contact__input(name="email")
 
             .contact__field
                 label.contact__label(for="message") message
-                textarea#message.contact__input.is-textarea
+                textarea#message.contact__input.is-textarea(name="message")
 
-            button.contact__button Submit
+            input.contact__button(type="submit" value="Submit")
 
             .contact__under-development.is-hidden
                 | This functionality is currently under development.<br />Please use one of the <a href="#social">social accounts</a> to get in touch.
