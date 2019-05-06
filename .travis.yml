@@ -1,0 +1,15 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+script:
+  - npm install
+  - npm start
+
+deploy:
+  provider: firebase
+  token:
+  secure: $FIREBASE_TOKEN
+  skip_cleanup: true
