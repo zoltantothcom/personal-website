@@ -21,7 +21,7 @@ gulp.task('script', gulp.series('lint', function(done) {
 		.pipe(rename({ 
 			suffix: '.min' 
 		}))
-		.pipe(gulp.dest('./docs'))
+		.pipe(gulp.dest('./build'))
 		.pipe(browSync.stream());
 
 	done();
@@ -32,7 +32,7 @@ gulp.task('markup', function(done) {
 		.pipe(pug({
 			pretty: true
 		}))
-		.pipe(gulp.dest('./docs'))
+		.pipe(gulp.dest('./build'))
 		.pipe(browSync.stream());
 
 	done();
@@ -47,7 +47,7 @@ gulp.task('styles', function(done) {
 		.pipe(rename({ 
 			suffix: '.min' 
 		}))
-		.pipe(gulp.dest('./docs'))
+		.pipe(gulp.dest('./build'))
 		.pipe(browSync.stream());
 
 	done();
@@ -56,7 +56,7 @@ gulp.task('styles', function(done) {
 // static Server + watching less/html files
 gulp.task('serve', gulp.series('script', 'markup', 'styles', 'lint', function(done) {
 	browSync.init({
-			server: './docs',
+			server: './build',
 			online: false
 	});
 
