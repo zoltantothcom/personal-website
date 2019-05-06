@@ -4,7 +4,8 @@
   "description": "Personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp live",
+    "build": "gulp"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",

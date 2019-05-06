@@ -68,4 +68,5 @@ gulp.task('serve', gulp.series('script', 'markup', 'styles', 'lint', function(do
 	done();
 }));
 
-gulp.task('default', gulp.series('serve'));
+gulp.task('default', gulp.series('script', 'markup', 'styles', 'lint'));
+gulp.task('live', gulp.series('serve'));
