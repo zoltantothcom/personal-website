@@ -1,22 +1,26 @@
 var pkg      = require('./package.json'),
     pug      = require('gulp-pug'),
     gulp     = require('gulp'),
-    less     = require('gulp-less'),
+		less     = require('gulp-less'),
+		babel    = require('gulp-babel'),
     clean    = require('gulp-clean-css'),
     uglify   = require('gulp-uglify'),
     rename   = require('gulp-rename'),
     jshint   = require('gulp-jshint'),
-    stylish  = require('jshint-stylish'),
+		stylish  = require('jshint-stylish'),
     browSync = require('browser-sync').create();
 
 gulp.task('lint', function(done) {
 	return gulp.src('./src/javascript/*.js')
 		.pipe(jshint('.jshintrc'))
-				.pipe(jshint.reporter(stylish));
+		.pipe(jshint.reporter(stylish));
 });
 
-gulp.task('script', gulp.series('lint', function(done) {
+gulp.task('script', gulp.series(function(done) {
 	gulp.src(['./src/javascript/script.js'])
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
 		.pipe(uglify())
 		.pipe(rename({ 
 			suffix: '.min' 

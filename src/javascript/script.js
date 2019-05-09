@@ -1,3 +1,5 @@
+// var rp = require('request-promise'); 
+
 document.addEventListener('DOMContentLoaded', function (e) {
 	// menu
 	var clickEvent = ('ontouchstart' in window ? 'touchend' : 'click');
@@ -66,10 +68,16 @@ var form = document.getElementById("form")
 	document.querySelector('.contact__button').addEventListener('click', function (e) {
 		e.preventDefault();
 
-
-
-		var FD = new FormData(form)
-		console.log(FD)
+		fetch('/bigben', {
+			headers: { "Content-Type": "application/json; charset=utf-8" },
+			method: 'PUT',
+			body: JSON.stringify({
+				username: 'Elon Musk',
+				email: 'elonmusk@gmail.com',
+			})
+		})
+		.then(response => response.json())
+  	.then(data => console.log(JSON.stringify(data)))
 
 	// 	document.querySelector('.contact__under-development').classList.remove('is-hidden');
 	});

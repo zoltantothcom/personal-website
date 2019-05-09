@@ -8,8 +8,11 @@
     "build": "gulp"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-cli": "^2.2.0",
     "gulp-header": "^2.0.7",
@@ -36,5 +39,10 @@
   "bugs": {
     "url": "https://github.com/zoltantothcom/zoltantothcom/issues"
   },
-  "homepage": "https://github.com/zoltantothcom/zoltantothcom#readme"
+  "homepage": "https://github.com/zoltantothcom/zoltantothcom#readme",
+  "dependencies": {
+    "firebase-functions": "^2.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
 }
