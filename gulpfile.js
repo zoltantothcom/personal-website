@@ -1,5 +1,4 @@
-var pkg      = require('./package.json'),
-    pug      = require('gulp-pug'),
+var pug      = require('gulp-pug'),
     gulp     = require('gulp'),
 		less     = require('gulp-less'),
 		babel    = require('gulp-babel'),
@@ -16,7 +15,7 @@ gulp.task('lint', function(done) {
 		.pipe(jshint.reporter(stylish));
 });
 
-gulp.task('script', gulp.series(function(done) {
+gulp.task('script', gulp.series('lint', function(done) {
 	gulp.src(['./src/javascript/script.js'])
 		.pipe(babel({
 			presets: ['@babel/preset-env']

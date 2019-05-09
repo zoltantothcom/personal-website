@@ -68,7 +68,7 @@ var form = document.getElementById("form")
 	document.querySelector('.contact__button').addEventListener('click', function (e) {
 		e.preventDefault();
 
-		fetch('/bigben', {
+		fetch('/send', {
 			headers: { "Content-Type": "application/json; charset=utf-8" },
 			method: 'PUT',
 			body: JSON.stringify({
