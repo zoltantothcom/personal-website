@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "/bigben",
-        "function": "bigben"
+        "source": "/send",
+        "function": "send"
       },
       {
         "source": "**",
