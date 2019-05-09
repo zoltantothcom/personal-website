@@ -5,11 +5,14 @@ const cors = require('cors')({ origin: true });
 
 admin.initializeApp();
 
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
+
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-      user: 'yourgmailaccount@gmail.com',
-      pass: 'yourgmailaccpassword'
+      user: gmailEmail,
+      pass: gmailPassword
   }
 });
 
