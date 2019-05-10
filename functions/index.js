@@ -31,10 +31,10 @@ function escape(s, forAttribute) {
 exports.send = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
       const mailOptions = {
-          from: `${escape(name, true)} <${escape(name, true)}>`,
+          from: `${escape(req.name, true)} <${escape(req.name, true)}>`,
           to: 'zoltantoth.com@gmail.com',
-          subject: 'PORTFOLIO - Contact Form Submission', // email subject
-          html: escape(message, true)
+          subject: 'PORTFOLIO - Contact Form Submission',
+          html: escape(req.message, true)
       };
 
       return transporter.sendMail(mailOptions, (error, info) => {
