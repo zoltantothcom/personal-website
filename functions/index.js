@@ -31,10 +31,10 @@ function escape(s, forAttribute) {
 exports.send = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
       const mailOptions = {
-          from: `${escape(req.name, true)} <${escape(req.name, true)}>`,
+          from: escape(req.email, true),
           to: 'zoltantoth.com@gmail.com',
-          subject: 'PORTFOLIO - Contact Form Submission',
-          html: escape(req.message, true)
+          subject: `PORTFOLIO - Message from ${escape(req.name, true)}`,
+          html: `<p>${escape(req.message, true)}</p>`
       };
 
       return transporter.sendMail(mailOptions, (error, info) => {
@@ -43,10 +43,10 @@ exports.send = functions.https.onRequest((req, res) => {
           }
 
           if (req.phone) {
-            return res.send('Eat shit retarded spam bot.')
+            return res.send({'data': 'Eat shit retarded spam bot.'})
           }
 
-          return res.send('Thank you! Your message has been successfully sent.');
+          return res.send({'data': 'Thank you! Your message has been successfully sent.'});
       });
   });    
 });
