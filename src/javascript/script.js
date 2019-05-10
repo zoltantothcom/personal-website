@@ -62,9 +62,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
 		this.style.height = this.scrollHeight + offset + 'px';
 	}, false);
 
-	// temp
-var form = document.getElementById("form")
-
 	document.querySelector('.contact__button').addEventListener('click', function (e) {
 		e.preventDefault();
 
@@ -79,8 +76,9 @@ var form = document.getElementById("form")
 			})
 		})
 		.then(response => response.json())
-  	.then(data => console.log(JSON.stringify(data)))
-
-	// 	document.querySelector('.contact__under-development').classList.remove('is-hidden');
+  	.then(data => {
+			document.querySelector('.contact__under-development').innerText = data.message;
+			document.querySelector('.contact__under-development').classList.remove('is-hidden');
+		})
 	});
 });

@@ -43,10 +43,10 @@ exports.send = functions.https.onRequest((req, res) => {
           }
 
           if (req.body.phone) {
-            return res.send({'data': 'Eat shit retarded spam bot.'})
+            return res.send({'message': 'Eat shit retarded spam bot.'})
           }
 
-          return res.send({'data': 'Thank you! Your message has been successfully sent.'});
+          return res.send({'message': 'Thank you! Your message has been successfully sent.'});
       });
   });    
 });
