@@ -28,13 +28,13 @@ function escape(s, forAttribute) {
   return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, (c) => ESC_MAP[c]);
 }
 
-exports.send = functions.https.onRequest((req, res) => {
+exports.send = functions.https.onRequest((req, res) => {  
   cors(req, res, () => {
       const mailOptions = {
-          from: escape(req.query.email, true),
+          from: escape(req.body.email, true),
           to: 'zoltantoth.com@gmail.com',
-          subject: `PORTFOLIO - Message from ${escape(req.query.name, true)}`,
-          html: `<p>${escape(req.query.message, true)}</p>`
+          subject: `PORTFOLIO - Message from ${escape(req.body.name, true)}`,
+          html: `<p>${escape(req.body.message, true)}</p>`
       };
 
       return transporter.sendMail(mailOptions, (error, info) => {
@@ -42,7 +42,7 @@ exports.send = functions.https.onRequest((req, res) => {
             return res.send(error.toString());
           }
 
-          if (req.query.phone) {
+          if (req.body.phone) {
             return res.send({'data': 'Eat shit retarded spam bot.'})
           }
 
