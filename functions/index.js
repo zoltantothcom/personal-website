@@ -8,7 +8,7 @@ admin.initializeApp();
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
 
-let transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
       user: gmailEmail,
@@ -16,35 +16,37 @@ let transporter = nodemailer.createTransport({
   }
 });
 
+const ESC_MAP = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;'
+};
+
+function escape(s, forAttribute) {
+  return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, (c) => ESC_MAP[c]);
+}
+
 exports.send = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
-    
-      // getting dest email by query string
-      const dest = 'zoltantoth.com@gmail.com';
-
       const mailOptions = {
-          from: 'Your Account Name <yourgmailaccount@gmail.com>', // Something like: Jane Doe <janedoe@gmail.com>
-          to: dest,
-          subject: 'I\'M A PICKLE!!!', // email subject
-          html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
-              <br />
-              <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
-          ` // email content in HTML
+          from: `${escape(name, true)} <${escape(name, true)}>`,
+          to: 'zoltantoth.com@gmail.com',
+          subject: 'PORTFOLIO - Contact Form Submission', // email subject
+          html: escape(message, true)
       };
 
-      // returning result
       return transporter.sendMail(mailOptions, (error, info) => {
-          if(error){
-              return res.send(error.toString());
+          if (error) {
+            return res.send(error.toString());
           }
-          return res.send('Sent');
+
+          if (req.phone) {
+            return res.send('Eat shit retarded spam bot.')
+          }
+
+          return res.send('Thank you! Your message has been successfully sent.');
       });
   });    
 });
-
-// exports.send = functions.https.onRequest((req, res) => {
-//   console.log(req);
-//   console.log(req.username);
-
-//   res.status(200).send({"success": true})
-// });

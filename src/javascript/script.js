@@ -70,10 +70,12 @@ var form = document.getElementById("form")
 
 		fetch('/send', {
 			headers: { "Content-Type": "application/json; charset=utf-8" },
-			method: 'PUT',
+			method: 'POST',
 			body: JSON.stringify({
-				username: 'Elon Musk',
-				email: 'elonmusk@gmail.com',
+				name:  document.getElementById('name').value,
+				phone:  document.getElementById('phone').value,
+				email:  document.getElementById('email').value,
+				message: document.getElementById('message').value,
 			})
 		})
 		.then(response => response.json())
