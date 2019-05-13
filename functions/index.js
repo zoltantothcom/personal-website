@@ -31,7 +31,10 @@ function escape(s, forAttribute) {
 exports.send = functions.https.onRequest((req, res) => {  
   cors(req, res, () => {
       const mailOptions = {
-          from: 'PORTFOLIO - Contact Form',
+          from: {
+            name: 'PORTFOLIO - Contact Form',
+            address: escape(req.body.email, true)
+          },
           replyTo: escape(req.body.email, true),
           to: 'zoltantoth.com@gmail.com',
           subject: `Message from ${escape(req.body.name, true)}`,
